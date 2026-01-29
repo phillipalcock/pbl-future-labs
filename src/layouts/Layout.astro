@@ -7,6 +7,8 @@ import interFont800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?u
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import BottomNav from '../components/BottomNav.astro';
+import FloatingActionButton from '../components/FloatingActionButton.astro';
 
 interface Props {
     title: string;
@@ -20,9 +22,22 @@ const { title } = Astro.props;
     <head>
         <meta charset="UTF-8" />
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="generator" content={Astro.generator} />
+
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#2563EB" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="PBL Labs" />
+        <meta name="mobile-web-app-capable" content="yes" />
+
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/images/new logo.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+        <!-- Fonts -->
         <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
         <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,12 +45,131 @@ const { title } = Astro.props;
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
     </head>
     <body class="antialiased text-gray-900 bg-white">
-        <div class="flex flex-col min-h-screen px-4 sm:px-8 lg:px-12 bg-white">
+        <!-- Pull to Refresh Indicator -->
+        <div id="pull-indicator" class="fixed top-0 left-0 right-0 z-[100] flex justify-center pointer-events-none sm:hidden">
+            <div class="bg-blue-600 text-white px-4 py-2 rounded-b-xl transform -translate-y-full transition-transform duration-200 flex items-center gap-2">
+                <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-sm font-medium">Refreshing...</span>
+            </div>
+        </div>
+
+        <!-- Page Transition Overlay -->
+        <div id="page-transition" class="fixed inset-0 bg-white z-[200] pointer-events-none opacity-0 transition-opacity duration-150"></div>
+
+        <div class="flex flex-col min-h-screen px-4 sm:px-8 lg:px-12 bg-white pb-20 sm:pb-0">
             <div class="flex flex-col w-full max-w-5xl mx-auto grow">
                 <Header />
-                <main class="grow"><slot /></main>
+                <main class="grow animate-fade-in"><slot /></main>
                 <Footer />
             </div>
         </div>
+
+        <!-- Mobile App Components -->
+        <BottomNav />
+        <FloatingActionButton />
+
+        <!-- App-like Scripts -->
+        <script>
+            // Hide header on scroll down, show on scroll up
+            const header = document.querySelector('nav.sticky');
+            let lastScrollY = window.scrollY;
+            let headerHidden = false;
+
+            function updateHeader() {
+                const currentScrollY = window.scrollY;
+                const scrollingDown = currentScrollY > lastScrollY;
+
+                if (scrollingDown && currentScrollY > 80 && !headerHidden) {
+                    header?.classList.add('-translate-y-full');
+                    headerHidden = true;
+                } else if (!scrollingDown && headerHidden) {
+                    header?.classList.remove('-translate-y-full');
+                    headerHidden = false;
+                }
+
+                lastScrollY = currentScrollY;
+            }
+
+            window.addEventListener('scroll', () => {
+                requestAnimationFrame(updateHeader);
+            }, { passive: true });
+
+            // Page transitions
+            document.querySelectorAll('a[href^="/"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('#') && !link.hasAttribute('data-menu-trigger')) {
+                        e.preventDefault();
+                        const transition = document.getElementById('page-transition');
+                        transition?.classList.add('opacity-100');
+
+                        // Haptic feedback
+                        if ('vibrate' in navigator) {
+                            navigator.vibrate(5);
+                        }
+
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 150);
+                    }
+                });
+            });
+
+            // Pull to refresh (mobile)
+            let touchStartY = 0;
+            let isPulling = false;
+            const pullIndicator = document.getElementById('pull-indicator');
+
+            document.addEventListener('touchstart', (e) => {
+                if (window.scrollY === 0) {
+                    touchStartY = e.touches[0].clientY;
+                    isPulling = true;
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchmove', (e) => {
+                if (!isPulling || window.scrollY > 0) return;
+
+                const touchY = e.touches[0].clientY;
+                const diff = touchY - touchStartY;
+
+                if (diff > 80) {
+                    pullIndicator?.querySelector('div')?.classList.remove('-translate-y-full');
+                    pullIndicator?.querySelector('div')?.classList.add('translate-y-0');
+                }
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                if (!isPulling) return;
+
+                const indicator = pullIndicator?.querySelector('div');
+                if (indicator?.classList.contains('translate-y-0')) {
+                    // Trigger refresh
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate(20);
+                    }
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 500);
+                } else {
+                    indicator?.classList.add('-translate-y-full');
+                    indicator?.classList.remove('translate-y-0');
+                }
+
+                isPulling = false;
+            }, { passive: true });
+
+            // Service Worker Registration (for PWA)
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js').catch(() => {
+                        // Service worker not available, that's okay
+                    });
+                });
+            }
+        </script>
     </body>
 </html>

@@ -1,0 +1,129 @@
+---
+const navItems = [
+    { label: 'Home', href: '/', icon: 'home' },
+    { label: 'Shop', href: '/shop', icon: 'shop' },
+    { label: 'Courses', href: '/courses', icon: 'courses' },
+    { label: 'More', href: '#', icon: 'more', isMenu: true }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- Bottom Navigation - Mobile Only -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white border-t border-gray-200 pb-safe">
+    <div class="flex items-center justify-around h-16">
+        {navItems.map((item) => {
+            const isActive = item.href === '/' ? currentPath === '/' : currentPath.startsWith(item.href);
+            return (
+                <a
+                    href={item.isMenu ? '#' : item.href}
+                    class:list={[
+                        "flex flex-col items-center justify-center w-full h-full no-underline transition-all active:scale-95",
+                        item.isMenu ? "bottom-nav-more" : "",
+                        isActive ? "text-blue-600" : "text-gray-500"
+                    ]}
+                    data-menu-trigger={item.isMenu ? "true" : undefined}
+                >
+                    {item.icon === 'home' && (
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    )}
+                    {item.icon === 'shop' && (
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    )}
+                    {item.icon === 'courses' && (
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    )}
+                    {item.icon === 'more' && (
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    )}
+                    <span class="text-xs mt-1 font-medium">{item.label}</span>
+                </a>
+            );
+        })}
+    </div>
+</nav>
+
+<!-- Bottom Sheet Menu for "More" -->
+<div id="bottom-sheet-overlay" class="fixed inset-0 bg-black/50 z-50 hidden opacity-0 transition-opacity sm:hidden"></div>
+<div id="bottom-sheet" class="fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-2xl transform translate-y-full transition-transform duration-300 ease-out sm:hidden">
+    <div class="flex justify-center pt-3 pb-2">
+        <div class="w-10 h-1 bg-gray-300 rounded-full"></div>
+    </div>
+    <div class="px-4 pb-8 pb-safe">
+        <nav class="space-y-1">
+            <a href="/curriculum" class="flex items-center gap-4 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl no-underline active:scale-98 transition-all">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="font-medium">Curriculum</span>
+            </a>
+            <a href="/coaching" class="flex items-center gap-4 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl no-underline active:scale-98 transition-all">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+                <span class="font-medium">Coaching</span>
+            </a>
+            <a href="/about" class="flex items-center gap-4 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-xl no-underline active:scale-98 transition-all">
+                <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="font-medium">About</span>
+            </a>
+        </nav>
+    </div>
+</div>
+
+<script>
+    // Bottom sheet functionality
+    const moreButtons = document.querySelectorAll('[data-menu-trigger="true"]');
+    const bottomSheet = document.getElementById('bottom-sheet');
+    const overlay = document.getElementById('bottom-sheet-overlay');
+
+    function openSheet() {
+        overlay?.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            overlay?.classList.add('opacity-100');
+            bottomSheet?.classList.remove('translate-y-full');
+        });
+        // Haptic feedback
+        if ('vibrate' in navigator) {
+            navigator.vibrate(10);
+        }
+    }
+
+    function closeSheet() {
+        overlay?.classList.remove('opacity-100');
+        bottomSheet?.classList.add('translate-y-full');
+        setTimeout(() => overlay?.classList.add('hidden'), 300);
+    }
+
+    moreButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSheet();
+        });
+    });
+
+    overlay?.addEventListener('click', closeSheet);
+
+    // Swipe down to close
+    let startY = 0;
+    bottomSheet?.addEventListener('touchstart', (e) => {
+        startY = e.touches[0].clientY;
+    });
+
+    bottomSheet?.addEventListener('touchmove', (e) => {
+        const diff = e.touches[0].clientY - startY;
+        if (diff > 50) {
+            closeSheet();
+        }
+    });
+</script>

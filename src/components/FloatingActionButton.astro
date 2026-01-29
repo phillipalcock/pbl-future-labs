@@ -1,0 +1,43 @@
+---
+// Floating Action Button - shows on mobile only
+---
+
+<a
+    href="/shop"
+    id="fab"
+    class="fixed right-4 bottom-20 z-40 sm:hidden w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center no-underline active:scale-95 transition-all hover:bg-blue-700 hover:shadow-xl"
+    aria-label="Shop Now"
+>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+    </svg>
+</a>
+
+<script>
+    // Hide FAB when scrolling down, show when scrolling up
+    const fab = document.getElementById('fab');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateFab() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down
+            fab?.classList.add('translate-y-24', 'opacity-0');
+        } else {
+            // Scrolling up
+            fab?.classList.remove('translate-y-24', 'opacity-0');
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateFab);
+            ticking = true;
+        }
+    }, { passive: true });
+</script>
