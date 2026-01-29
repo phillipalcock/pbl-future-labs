@@ -45,7 +45,7 @@ export const products: Product[] = [
   // Courses
   {
     id: 'course-1',
-    title: 'Micro-Credential: AI in Project-Based Learning',
+    title: 'AI in Project-Based Learning',
     description: 'Master AI integration strategies for designing and delivering authentic project-based learning experiences. 4 weeks.',
     price: 99.99,
     category: 'course',
@@ -55,7 +55,7 @@ export const products: Product[] = [
   },
   {
     id: 'course-2',
-    title: 'Micro-Credential: Designing Authentic Projects',
+    title: 'Designing Authentic Projects',
     description: 'Learn frameworks for creating meaningful, real-world projects that drive student engagement and achievement. 6 weeks.',
     price: 149.99,
     category: 'course',
@@ -65,7 +65,7 @@ export const products: Product[] = [
   },
   {
     id: 'course-3',
-    title: 'Micro-Credential: AI-Powered Personalized Learning',
+    title: 'AI-Powered Personalized Learning',
     description: 'Implement adaptive learning technologies and AI tools to personalize student learning paths. 5 weeks.',
     price: 129.99,
     category: 'course',
@@ -75,7 +75,7 @@ export const products: Product[] = [
   },
   {
     id: 'course-4',
-    title: 'Micro-Credential: Community Partnerships & PBL',
+    title: 'Community Partnerships & PBL',
     description: 'Build authentic connections with community organizations to enhance project-based learning. 4 weeks.',
     price: 89.99,
     category: 'course',
@@ -85,7 +85,7 @@ export const products: Product[] = [
   },
   {
     id: 'course-5',
-    title: 'Micro-Credential: Assessing 21st Century Skills',
+    title: 'Assessing 21st Century Skills',
     description: 'Develop authentic assessment methods for evaluating project work and critical thinking skills. 7 weeks.',
     price: 159.99,
     category: 'course',
@@ -95,7 +95,7 @@ export const products: Product[] = [
   },
   {
     id: 'course-6',
-    title: 'Micro-Credential: AI Ethics in Education',
+    title: 'AI Ethics in Education',
     description: 'Explore responsible AI implementation, bias detection, and ethical considerations in educational technology. 5 weeks.',
     price: 119.99,
     category: 'course',
