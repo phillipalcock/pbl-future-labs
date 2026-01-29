@@ -75,8 +75,8 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredCourses.map(course => (
                 <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-md">
-                    <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                        <img src={course.image} alt={course.title} class="w-full h-full object-cover" />
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-6xl">{course.image}</span>
                     </div>
                     <div class="p-5">
                         <div class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded mb-2">Micro-Credential</div>
