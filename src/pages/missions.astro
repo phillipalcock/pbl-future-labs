@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Markdown from '../components/Markdown.astro';
+
+const missionsContent = `
+# Learning Missions Explorer
+
+Discover hundreds of learning missions designed to inspire authentic, student-centered learning. Filter by grade level, subject, duration, and community focus area.
+
+## Browse Our Missions
+
+### Social & Environmental Justice
+- **Climate Action Campaign** - 9-12, 10 weeks - Students create media campaigns about climate change
+- **Water Quality Project** - 6-8, 8 weeks - Design and test solutions for local water issues
+- **Community Health Initiative** - 7-9, 6 weeks - Research and address health disparities
+
+### Entrepreneurship & Innovation
+- **Local Business Analysis** - 9-12, 5 weeks - Study successful local businesses and create startup pitches
+- **Product Design Challenge** - 6-8, 7 weeks - Solve real problems with innovative product design
+- **Social Enterprise Venture** - 9-12, 10 weeks - Launch a business addressing a social need
+
+### Arts & Culture
+- **Community History Archive** - 3-5, 6 weeks - Preserve and celebrate local cultural heritage
+- **Public Art Project** - 6-8, 8 weeks - Design and install public art addressing community themes
+- **Cultural Storytelling** - 7-9, 5 weeks - Collect and share stories from diverse community members
+
+### STEM & Technology
+- **Robotics for Accessibility** - 6-8, 8 weeks - Build assistive robots for people with disabilities
+- **Citizen Science Study** - 3-5, 4 weeks - Contribute data to real scientific research
+- **Smart City Planning** - 9-12, 10 weeks - Design sustainable urban solutions using technology
+
+### Literacy & Communication
+- **Podcast Production** - 6-9, 6 weeks - Research topics and produce professional podcasts
+- **Documentary Filmmaking** - 9-12, 10 weeks - Tell compelling stories through documentary film
+- **Advocacy Writing Campaign** - 7-9, 5 weeks - Research issues and persuade through writing
+
+---
+
+## How to Use Learning Missions
+
+1. **Browse** the missions that match your learners' interests and level
+2. **Customize** missions with AI assistance to fit your context
+3. **Implement** with built-in scaffolds, rubrics, and resources
+4. **Track** student progress and mastery through embedded assessments
+5. **Celebrate** student work and impact
+
+## AI-Powered Mission Features
+
+- **Adaptive scaffolding** - AI adjusts support based on student needs
+- **Real-time feedback** - Students receive instant guidance on their work
+- **Resource generation** - AI curates learning materials and reference documents
+- **Progress tracking** - Automated insights into student understanding
+- **Student personalization** - Missions adapt to individual learning styles and paces
+
+**Start exploring:** Pick a mission that excites you and your learners!
+
+[Create Your Own Mission →](/builder)
+`;
+---
+
+<Layout title="Learning Missions">
+    <div class="max-w-4xl">
+        <Markdown content={missionsContent} class="prose prose-invert max-w-none" />
+    </div>
+</Layout>
