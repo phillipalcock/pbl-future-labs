@@ -3,12 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply leading-relaxed;
+        line-height: 1.7;
+    }
+
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-4xl font-bold tracking-tight sm:text-5xl font-serif;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-2xl font-bold sm:text-3xl font-serif;
+    }
+
+    p {
+        @apply leading-relaxed;
+        line-height: 1.7;
     }
 
     a {
@@ -46,5 +60,19 @@
 
     .btn:disabled {
         @apply text-neutral-400 bg-neutral-700;
+    }
+
+    /* Card hover lift effect */
+    .card-hover {
+        @apply transition-all duration-300 ease-out;
+    }
+
+    .card-hover:hover {
+        @apply -translate-y-1 shadow-lg;
+    }
+
+    /* Guarantee badge styling */
+    .guarantee-badge {
+        @apply inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium border border-green-200;
     }
 }

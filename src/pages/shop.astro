@@ -9,16 +9,16 @@ const bundles = products.filter(p => p.category === 'bundle');
 <Layout title="Shop - Books & Products">
     <div class="max-w-6xl">
         <!-- Page Header -->
-        <div class="mb-12">
+        <div class="mb-12 pt-4">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Books & Educational Products</h1>
-            <p class="text-lg text-gray-700">Discover expert-authored books on project-based learning, education technology, and professional development</p>
+            <p class="text-lg text-gray-600">Discover expert-authored books on project-based learning, education technology, and professional development</p>
         </div>
 
         <!-- Filter Section -->
-        <div class="mb-8 flex gap-4 flex-wrap">
-            <button class="btn btn-sm btn-primary text-white rounded">All Products</button>
-            <button class="btn btn-sm btn-outline rounded" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
-            <button class="btn btn-sm btn-outline rounded" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
+        <div class="mb-8 flex gap-3 flex-wrap">
+            <button class="btn btn-sm btn-primary text-white rounded-lg">All Products</button>
+            <button class="btn btn-sm btn-outline rounded-lg hover:bg-gray-50" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
+            <button class="btn btn-sm btn-outline rounded-lg hover:bg-gray-50" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
         </div>
 
         <!-- Books Grid -->
@@ -26,14 +26,14 @@ const bundles = products.filter(p => p.category === 'bundle');
             <h2 class="text-2xl font-bold text-gray-900 mb-8">Books</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {books.map(book => (
-                    <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-lg">
-                        <div class="aspect-video bg-gray-200 overflow-hidden rounded-t-lg">
-                            <img src={book.image} alt={book.title} class="w-full h-full object-cover" />
+                    <div class="card card-hover bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <div class="aspect-[4/3] bg-gray-100 overflow-hidden">
+                            <img src={book.image} alt={book.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                         </div>
                         <div class="p-6">
                             <div class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded mb-2">Book</div>
                             <h3 class="font-bold text-lg text-gray-900 mb-3 line-clamp-2">{book.title}</h3>
-                            <p class="text-gray-700 text-sm mb-4 line-clamp-3">{book.description}</p>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">{book.description}</p>
 
                             <!-- Rating -->
                             <div class="flex items-center gap-2 mb-4">
@@ -46,7 +46,7 @@ const bundles = products.filter(p => p.category === 'bundle');
 
                             <!-- Price -->
                             <div class="flex items-center justify-between">
-                                <span class="text-2xl font-bold text-blue-600">${book.price}</span>
+                                <span class="text-2xl font-bold text-gray-900">${book.price}</span>
                             </div>
                         </div>
                     </div>
@@ -60,14 +60,14 @@ const bundles = products.filter(p => p.category === 'bundle');
                 <h2 class="text-2xl font-bold text-gray-900 mb-8">Special Bundles - Save Big!</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {bundles.map(bundle => (
-                        <div class="card bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md hover:shadow-lg transition-all">
-                            <div class="aspect-video bg-gray-300 overflow-hidden rounded-t-lg">
-                                <img src={bundle.image} alt={bundle.title} class="w-full h-full object-cover" />
+                        <div class="card card-hover bg-gradient-to-br from-amber-50 to-blue-50 border-2 border-amber-200 rounded-xl overflow-hidden shadow-md">
+                            <div class="aspect-video bg-gray-200 overflow-hidden">
+                                <img src={bundle.image} alt={bundle.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                             </div>
                             <div class="p-6">
-                                <div class="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full mb-3">Limited Bundle</div>
+                                <div class="inline-block px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full mb-3">Best Value</div>
                                 <h3 class="font-bold text-xl text-gray-900 mb-3">{bundle.title}</h3>
-                                <p class="text-gray-700 mb-4">{bundle.description}</p>
+                                <p class="text-gray-600 mb-4">{bundle.description}</p>
 
                                 <!-- Rating -->
                                 <div class="flex items-center gap-2 mb-4">
@@ -79,9 +79,9 @@ const bundles = products.filter(p => p.category === 'bundle');
                                 </div>
 
                                 <!-- Price -->
-                                <div class="pt-4 border-t border-blue-200">
+                                <div class="pt-4 border-t border-amber-200">
                                     <span class="text-xs text-gray-600">Bundle Price</span>
-                                    <span class="text-3xl font-bold text-blue-600 block">${bundle.price}</span>
+                                    <span class="text-3xl font-bold text-gray-900 block">${bundle.price}</span>
                                 </div>
                             </div>
                         </div>
@@ -91,10 +91,10 @@ const bundles = products.filter(p => p.category === 'bundle');
         )}
 
         <!-- CTA Section -->
-        <section class="py-12 bg-gray-100 rounded-lg text-center mb-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Can't find what you're looking for?</h2>
-            <p class="text-gray-700 mb-6">Check out our micro-credential courses for specialized professional development</p>
-            <a href="/courses" class="btn btn-primary btn-lg text-white rounded no-underline">Browse Courses</a>
+        <section class="py-12 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-center mb-8 text-white shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Can't find what you're looking for?</h2>
+            <p class="opacity-90 mb-6">Check out our micro-credential courses for specialized professional development</p>
+            <a href="/courses" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-lg no-underline font-semibold">Browse Courses</a>
         </section>
     </div>
 </Layout>

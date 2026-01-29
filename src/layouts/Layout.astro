@@ -25,6 +25,9 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
         <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
     </head>
     <body class="antialiased text-base-content bg-white">
         <div class="flex flex-col min-h-screen px-6 bg-gradient-to-b from-white to-gray-50 sm:px-12">

@@ -8,33 +8,33 @@ const courses = products.filter(p => p.category === 'course');
 <Layout title="Micro-Credentials - Professional Development Courses">
     <div class="max-w-6xl">
         <!-- Page Header -->
-        <div class="mb-12">
+        <div class="mb-12 pt-4">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Micro-Credential Courses</h1>
-            <p class="text-lg text-gray-700">Earn recognized credentials through specialized, focused learning programs designed for busy professionals</p>
+            <p class="text-lg text-gray-600">Earn recognized credentials through specialized, focused learning programs designed for busy professionals</p>
         </div>
 
         <!-- Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
                 <div class="text-3xl font-bold text-blue-600 mb-2">4-7 Weeks</div>
-                <p class="text-gray-700">Flexible pacing fits your schedule</p>
+                <p class="text-gray-600">Flexible pacing fits your schedule</p>
             </div>
-            <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
                 <div class="text-3xl font-bold text-green-600 mb-2">100% Online</div>
-                <p class="text-gray-700">Learn anywhere, anytime</p>
+                <p class="text-gray-600">Learn anywhere, anytime</p>
             </div>
-            <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
-                <div class="text-3xl font-bold text-purple-600 mb-2">Recognized</div>
-                <p class="text-gray-700">Industry-recognized credentials</p>
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+                <div class="text-3xl font-bold text-amber-600 mb-2">Recognized</div>
+                <p class="text-gray-600">Industry-recognized credentials</p>
             </div>
         </div>
 
         <!-- Courses Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {courses.map(course => (
-                <div class="card bg-white border border-gray-200 hover:border-blue-400 transition-all shadow-sm hover:shadow-lg overflow-hidden">
+                <div class="card card-hover bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                     <!-- Icon -->
-                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden flex items-center justify-center">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-blue-100 to-indigo-200 overflow-hidden flex items-center justify-center">
                         <span class="text-7xl">{course.image}</span>
                     </div>
 
@@ -51,21 +51,21 @@ const courses = products.filter(p => p.category === 'course');
                         <!-- Features -->
                         <ul class="text-sm text-gray-600 space-y-2 mb-4">
                             <li class="flex gap-2">
-                                <span class="text-blue-600">✓</span>
+                                <span class="text-green-600">✓</span>
                                 <span>Self-paced learning</span>
                             </li>
                             <li class="flex gap-2">
-                                <span class="text-blue-600">✓</span>
+                                <span class="text-green-600">✓</span>
                                 <span>Hands-on projects</span>
                             </li>
                             <li class="flex gap-2">
-                                <span class="text-blue-600">✓</span>
+                                <span class="text-green-600">✓</span>
                                 <span>Certificate of completion</span>
                             </li>
                         </ul>
 
                         <!-- Rating -->
-                        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-200">
+                        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-100">
                             <div class="flex items-center">
                                 <span class="text-yellow-500">★</span>
                                 <span class="text-sm font-semibold text-gray-700 ml-1">{course.rating}</span>
@@ -75,7 +75,7 @@ const courses = products.filter(p => p.category === 'course');
 
                         <!-- Price -->
                         <div>
-                            <span class="text-2xl font-bold text-blue-600">${course.price}</span>
+                            <span class="text-2xl font-bold text-gray-900">${course.price}</span>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const courses = products.filter(p => p.category === 'course');
         </div>
 
         <!-- What You'll Learn Section -->
-        <section class="bg-gray-50 rounded-lg p-8 mb-12">
+        <section class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 mb-12 border border-gray-100">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -109,15 +109,15 @@ const courses = products.filter(p => p.category === 'course');
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
             <div class="space-y-4">
-                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Do I need prerequisites?</h3>
                     <p class="text-gray-600">Most micro-credentials are designed for professionals with general knowledge in education. Specific prerequisites are listed in each course description.</p>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">How long do I have access?</h3>
                     <p class="text-gray-600">You'll have lifetime access to all course materials and can complete at your own pace, though most courses take 4-7 weeks.</p>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Are credentials recognized?</h3>
                     <p class="text-gray-600">Yes, our micro-credentials are recognized by leading educational institutions and employers in the field.</p>
                 </div>
@@ -125,12 +125,18 @@ const courses = products.filter(p => p.category === 'course');
         </section>
 
         <!-- CTA -->
-        <section class="py-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg text-center text-white mb-8">
+        <section class="py-12 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 rounded-2xl text-center text-white mb-8 shadow-xl">
             <h2 class="text-3xl font-bold mb-4">Ready to Advance Your Career?</h2>
             <p class="text-lg mb-6 opacity-90">Start your first micro-credential today and join thousands of educators advancing their skills</p>
             <div class="flex gap-4 justify-center flex-wrap">
-                <button class="btn btn-ghost text-white hover:bg-white/20 rounded px-8">Start Free Trial</button>
-                <a href="/shop" class="btn btn-outline btn-lg text-white rounded px-8 no-underline">View All Resources</a>
+                <button class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-lg font-semibold">Start Free Trial</button>
+                <a href="/shop" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-lg no-underline">View All Resources</a>
+            </div>
+            <div class="mt-6">
+                <span class="guarantee-badge bg-white/10 border-white/20 text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    30-Day Money-Back Guarantee
+                </span>
             </div>
         </section>
     </div>

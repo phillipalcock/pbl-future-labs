@@ -11,13 +11,30 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                'grid-pattern': `linear-gradient(to bottom, theme('colors.white / 100%'), theme('colors.gray.50 / 100%'))`
+                'grid-pattern': `linear-gradient(to bottom, theme('colors.white / 100%'), theme('colors.gray.50 / 100%'))`,
+                'hero-gradient': `linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #fef3c7 100%)`
             },
             colors: {
-                neutral: colors.neutral
+                neutral: colors.neutral,
+                gold: {
+                    50: '#fffbeb',
+                    100: '#fef3c7',
+                    200: '#fde68a',
+                    300: '#fcd34d',
+                    400: '#fbbf24',
+                    500: '#f59e0b',
+                    600: '#d97706',
+                    700: '#b45309',
+                    800: '#92400e',
+                    900: '#78350f'
+                }
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans]
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                serif: ['Playfair Display', ...defaultTheme.fontFamily.serif]
+            },
+            lineHeight: {
+                'relaxed-body': '1.7'
             }
         }
     },
@@ -30,7 +47,8 @@ export default {
                     'primary-content': '#ffffff',
                     secondary: '#64748B',
                     'secondary-content': '#ffffff',
-                    accent: '#3B82F6',
+                    accent: '#d97706',
+                    'accent-content': '#ffffff',
                     'base-100': '#ffffff',
                     'base-200': '#F3F4F6',
                     'base-300': '#E5E7EB',
