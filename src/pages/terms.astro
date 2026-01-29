@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+    { label: 'Terms of Service' }
+];
+---
+
+<Layout title="Terms of Service - PBL Future Labs">
+    <div class="max-w-3xl">
+        <Breadcrumb items={breadcrumbItems} />
+
+        <section class="py-12 mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">Terms of Service</h1>
+            <p class="text-sm text-gray-500 mb-8">Last updated: January 2026</p>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">Overview</h2>
+                    <p>By purchasing or using products from PBL Future Labs, you agree to these terms. We want this to be straightforward — no legal maze.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">Products & Courses</h2>
+                    <p>When you purchase a course or book, you receive a personal, non-transferable license to access and use the materials. You may not redistribute, resell, or share account access with others. School or district licenses are available — email us for details.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">30-Day Money-Back Guarantee</h2>
+                    <p>All courses and digital products come with a 30-day, no-questions-asked money-back guarantee. If you're not satisfied for any reason, email <a href="mailto:hello@pblfuturelabs.com" class="text-blue-600 hover:text-blue-800">hello@pblfuturelabs.com</a> within 30 days of purchase and we'll issue a full refund. No forms, no hoops, no guilt trips.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">Course Access</h2>
+                    <p>Once purchased, you have lifetime access to course materials. If we ever discontinue a course, you'll receive at least 90 days notice and the option to download all materials.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">Intellectual Property</h2>
+                    <p>All content on this site — text, images, course materials, frameworks — is the intellectual property of PBL Future Labs. You're welcome to reference and cite our work with attribution. Please don't copy and resell it.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-3">Contact</h2>
+                    <p>Questions? Email <a href="mailto:hello@pblfuturelabs.com" class="text-blue-600 hover:text-blue-800">hello@pblfuturelabs.com</a>.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
