@@ -11,8 +11,8 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                'grid-pattern': `linear-gradient(to bottom, theme('colors.white / 100%'), theme('colors.gray.50 / 100%'))`,
-                'hero-gradient': `linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #fef3c7 100%)`
+                'grid-pattern': `linear-gradient(to bottom, theme('colors.white / 100%'), theme('colors.white / 100%'))`,
+                'hero-gradient': `linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)`
             },
             colors: {
                 neutral: colors.neutral,
@@ -30,11 +30,30 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', ...defaultTheme.fontFamily.sans],
                 serif: ['Playfair Display', ...defaultTheme.fontFamily.serif]
             },
             lineHeight: {
                 'relaxed-body': '1.7'
+            },
+            borderRadius: {
+                '2xl': '1rem',
+                '3xl': '1.5rem'
+            },
+            boxShadow: {
+                'sm': '0 1px 2px 0 rgb(0 0 0 / 0.03)',
+                'DEFAULT': '0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05)',
+                'md': '0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05)',
+                'lg': '0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05)'
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.3s ease-out'
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0', transform: 'translateY(8px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' }
+                }
             }
         }
     },
@@ -50,8 +69,8 @@ export default {
                     accent: '#d97706',
                     'accent-content': '#ffffff',
                     'base-100': '#ffffff',
-                    'base-200': '#F3F4F6',
-                    'base-300': '#E5E7EB',
+                    'base-200': '#ffffff',
+                    'base-300': '#f9fafb',
                     'base-content': '#1F2937',
                     info: '#2563EB',
                     'info-content': '#ffffff',

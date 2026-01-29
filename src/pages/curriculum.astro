@@ -44,13 +44,13 @@ const services = [
             <p class="text-xl text-gray-600 mb-8 max-w-2xl">
                 Stop teaching from the textbook. We design project-based curriculum that engages students, meets standards, and fits your reality—now supercharged with AI.
             </p>
-            <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-primary btn-lg text-white rounded-lg px-8 no-underline shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all">
+            <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-primary btn-lg text-white rounded-xl px-8 no-underline shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all min-h-[48px] active:scale-95">
                 Let's Build Something
             </a>
         </section>
 
         <!-- AI Section -->
-        <section class="mb-16 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 sm:p-10 border border-indigo-100">
+        <section class="mb-16 bg-indigo-50 rounded-2xl p-8 sm:p-10">
             <div class="flex items-start gap-4 mb-6">
                 <span class="text-4xl">🤖</span>
                 <div>
@@ -62,9 +62,9 @@ const services = [
                 We combine deep PBL expertise with the latest AI tools to create curriculum faster, smarter, and more personalized than ever before. Generate project ideas, differentiate for diverse learners, and iterate in real-time—all while keeping the human touch that makes great teaching possible.
             </p>
             <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Rapid Prototyping</span>
-                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Personalized Pathways</span>
-                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Smart Differentiation</span>
+                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Rapid Prototyping</span>
+                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Personalized Pathways</span>
+                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Smart Differentiation</span>
             </div>
         </section>
 
@@ -73,7 +73,7 @@ const services = [
             <h2 class="text-2xl font-bold text-gray-900 mb-8">What We Create</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {services.map(service => (
-                    <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow active:scale-[0.98] transition-transform">
                         <span class="text-4xl mb-4 block">{service.icon}</span>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                         <p class="text-gray-600">{service.description}</p>
@@ -111,7 +111,7 @@ const services = [
         </section>
 
         <!-- What You Get -->
-        <section class="mb-16 bg-gray-50 rounded-2xl p-8 sm:p-10 border border-gray-100">
+        <section class="mb-16 bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">What You Get</h2>
             <ul class="space-y-4">
                 <li class="flex gap-3">
@@ -144,10 +144,10 @@ const services = [
                 From a single unit to a full course sequence—we'll meet you where you are.
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-lg px-8 no-underline font-semibold">
+                <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl px-8 no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">
                     Get in Touch
                 </a>
-                <a href="/coaching" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-lg px-8 no-underline">
+                <a href="/coaching" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-xl px-8 no-underline min-h-[48px] active:scale-95 transition-transform">
                     Explore Coaching
                 </a>
             </div>
