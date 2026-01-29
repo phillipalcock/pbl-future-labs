@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Shop - PBL Future Labs Gumroad Store">
+    <div class="max-w-6xl">
+        <!-- Page Header -->
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">PBL & AI Resources Store</h1>
+            <p class="text-lg text-gray-600">Explore our complete collection of books, courses, and educational resources</p>
+        </div>
+
+        <!-- Gumroad Embed -->
+        <div class="mb-16">
+            <iframe
+                src="https://aixpbl.gumroad.com/"
+                class="w-full border border-gray-200 rounded-lg"
+                style="min-height: 800px;"
+                allow="payment"
+            ></iframe>
+        </div>
+
+        <!-- Alternative CTA -->
+        <section class="py-12 bg-gray-100 rounded-lg text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Having trouble viewing the store?</h2>
+            <p class="text-gray-600 mb-6">You can also visit our Gumroad store directly:</p>
+            <a href="https://aixpbl.gumroad.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg text-white rounded">
+                Visit Gumroad Store →
+            </a>
+        </section>
+    </div>
+
+    <style>
+        iframe {
+            display: block;
+        }
+    </style>
+</Layout>
