@@ -26,7 +26,7 @@ const bundles = products.filter(p => p.category === 'bundle');
             <h2 class="text-2xl font-bold text-gray-900 mb-8">Books</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {books.map(book => (
-                    <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-lg">
+                    <div class="card bg-white border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-1">
                         <div class="aspect-video bg-gray-200 overflow-hidden rounded-t-lg">
                             <img src={book.image} alt={book.title} class="w-full h-full object-cover" />
                         </div>

@@ -32,7 +32,7 @@ const courses = products.filter(p => p.category === 'course');
         <!-- Courses Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {courses.map(course => (
-                <div class="card bg-white border border-gray-200 hover:border-blue-400 transition-all shadow-sm hover:shadow-lg overflow-hidden">
+                <div class="card bg-white border border-gray-200 hover:border-gray-300 transition-all duration-200 shadow-sm hover:shadow-lg hover:-translate-y-1 overflow-hidden">
                     <!-- Icon -->
                     <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden flex items-center justify-center">
                         <span class="text-7xl">{course.image}</span>
