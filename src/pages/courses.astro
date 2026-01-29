@@ -33,9 +33,9 @@ const courses = products.filter(p => p.category === 'course');
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {courses.map(course => (
                 <div class="card bg-white border border-gray-200 hover:border-blue-400 transition-all shadow-sm hover:shadow-lg overflow-hidden">
-                    <!-- Image -->
-                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden">
-                        <img src={course.image} alt={course.title} class="w-full h-full object-cover hover:scale-105 transition-transform" />
+                    <!-- Icon -->
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 overflow-hidden flex items-center justify-center">
+                        <span class="text-7xl">{course.image}</span>
                     </div>
 
                     <div class="p-6">
@@ -73,12 +73,9 @@ const courses = products.filter(p => p.category === 'course');
                             <span class="text-xs text-gray-500">({course.reviews} reviews)</span>
                         </div>
 
-                        <!-- Price and CTA -->
-                        <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-900">${course.price}</span>
-                            <button class="btn btn-primary btn-sm text-white rounded" data-product-id={course.id}>
-                                Enroll Now
-                            </button>
+                        <!-- Price -->
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">${course.price}</span>
                         </div>
                     </div>
                 </div>
@@ -137,31 +134,4 @@ const courses = products.filter(p => p.category === 'course');
             </div>
         </section>
     </div>
-
-    <script>
-        // Simple add to cart functionality
-        document.querySelectorAll('[data-product-id]').forEach(button => {
-            button.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product-id');
-                const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
-                const existingItem = cartItems.find(item => item.productId === productId);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cartItems.push({ productId, quantity: 1 });
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-
-                // Visual feedback
-                this.textContent = 'Added!';
-                this.classList.add('btn-success');
-                setTimeout(() => {
-                    this.textContent = 'Enroll Now';
-                    this.classList.remove('btn-success');
-                }, 1500);
-            });
-        });
-    </script>
 </Layout>

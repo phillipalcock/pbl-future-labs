@@ -45,8 +45,8 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredBooks.map(book => (
                 <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-md">
-                    <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                        <img src={book.image} alt={book.title} class="w-full h-full object-cover" />
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-6xl">{book.image}</span>
                     </div>
                     <div class="p-5">
                         <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{book.title}</h3>
@@ -59,7 +59,6 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
                                 <span class="text-xs text-gray-500">({book.reviews})</span>
                             </div>
                         </div>
-                        <a href={`/shop?id=${book.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Add to Cart</a>
                     </div>
                 </div>
             ))}
@@ -75,8 +74,8 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredCourses.map(course => (
                 <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-md">
-                    <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
-                        <img src={course.image} alt={course.title} class="w-full h-full object-cover" />
+                    <div class="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-lg overflow-hidden flex items-center justify-center">
+                        <span class="text-6xl">{course.image}</span>
                     </div>
                     <div class="p-5">
                         <div class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded mb-2">Micro-Credential</div>
@@ -90,7 +89,6 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
                                 <span class="text-xs text-gray-500">({course.reviews})</span>
                             </div>
                         </div>
-                        <a href={`/courses?id=${course.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Enroll Now</a>
                     </div>
                 </div>
             ))}
