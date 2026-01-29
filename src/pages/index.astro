@@ -139,7 +139,7 @@ const partnerLogos = [
         <div class="bg-blue-50 rounded-2xl p-8 sm:p-10">
             <div class="flex flex-col md:flex-row gap-8 items-center">
                 <div class="flex-shrink-0">
-                    <img src="/images/thom.webp" alt="Thom Markham" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover shadow-xl border-4 border-white" />
+                    <img src="/images/thom.webp" alt="Thom Markham" width="160" height="160" class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover shadow-xl border-4 border-white" />
                 </div>
                 <div class="text-center md:text-left">
                     <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Meet Thom Markham, Ph.D.</h2>
@@ -176,8 +176,8 @@ const partnerLogos = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredBooks.map(book => (
                 <div class="card card-hover bg-white rounded-2xl overflow-hidden shadow-sm active:scale-[0.98] transition-transform">
-                    <div class="aspect-[4/3] bg-white overflow-hidden">
-                        <img src={book.image} alt={book.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                    <div class="aspect-[4/3] bg-white overflow-hidden img-skeleton">
+                        <img src={book.image} alt={book.title} width="400" height="300" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" onload="this.parentElement.classList.add('loaded')" />
                     </div>
                     <div class="p-5">
                         <div class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full mb-2">Book</div>
@@ -233,9 +233,9 @@ const partnerLogos = [
             <h2 class="text-3xl font-bold text-gray-900 mb-3">Educators on AI-Powered PBL</h2>
             <p class="text-gray-600 max-w-2xl mx-auto">Join thousands of educators using AI to transform their project-based classrooms</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex gap-6 scroll-snap-x md:grid md:grid-cols-3 md:overflow-visible px-1">
             {testimonials.map(testimonial => (
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="scroll-snap-item w-[85vw] md:w-auto bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex gap-1 mb-4">
                         {[...Array(5)].map(() => (
                             <span class="text-yellow-500">★</span>

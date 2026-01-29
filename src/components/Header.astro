@@ -13,7 +13,7 @@ const navItems = [
     <div class="flex items-center justify-between gap-4">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2 flex-shrink-0 no-underline min-h-[44px] active:scale-95 transition-transform">
-            <img src="/images/new logo.png" alt="PBL Future Labs" class="h-8 sm:h-10 w-auto" />
+            <img src="/images/new logo.png" alt="PBL Future Labs" width="40" height="40" class="h-8 sm:h-10 w-auto" />
             <span class="text-sm sm:text-base font-semibold text-gray-800 hidden sm:inline">PBL Future Labs</span>
         </a>
 
@@ -50,9 +50,9 @@ const navItems = [
         </div>
     </div>
 
-    <!-- Mobile Menu (hidden by default) -->
-    <div id="mobile-menu" class="hidden sm:hidden mt-4 pb-2 border-t border-gray-100 pt-4">
-        <ul class="flex flex-col gap-1">
+    <!-- Mobile Menu (hidden by default, animated slide-down) -->
+    <div id="mobile-menu" class="sm:hidden border-t border-gray-100 overflow-hidden transition-all duration-300 ease-out" style="max-height: 0; opacity: 0;">
+        <ul class="flex flex-col gap-1 pt-4 pb-2">
             {navItems.map((item) => (
                 <li>
                     <a
@@ -67,18 +67,60 @@ const navItems = [
     </div>
 </nav>
 
+<!-- Mobile menu backdrop overlay -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/20 z-40 sm:hidden pointer-events-none opacity-0 transition-opacity duration-300" style="display: none;"></div>
+
 <script>
-    // Mobile menu toggle
+    // Mobile menu toggle with smooth animation
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+
+    function openMenu() {
+        if (!mobileMenu || !backdrop) return;
+        mobileMenuButton?.setAttribute('aria-expanded', 'true');
+        menuIconOpen?.classList.add('hidden');
+        menuIconClose?.classList.remove('hidden');
+
+        // Animate menu open
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+
+        // Show backdrop
+        backdrop.style.display = 'block';
+        requestAnimationFrame(() => {
+            backdrop.style.opacity = '1';
+            backdrop.classList.remove('pointer-events-none');
+        });
+    }
+
+    function closeMenu() {
+        if (!mobileMenu || !backdrop) return;
+        mobileMenuButton?.setAttribute('aria-expanded', 'false');
+        menuIconOpen?.classList.remove('hidden');
+        menuIconClose?.classList.add('hidden');
+
+        // Animate menu close
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+
+        // Hide backdrop
+        backdrop.style.opacity = '0';
+        backdrop.classList.add('pointer-events-none');
+        setTimeout(() => { backdrop.style.display = 'none'; }, 300);
+    }
 
     mobileMenuButton?.addEventListener('click', () => {
         const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
-        mobileMenu?.classList.toggle('hidden');
-        menuIconOpen?.classList.toggle('hidden');
-        menuIconClose?.classList.toggle('hidden');
+        if (isExpanded) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
+
+    // Close menu when tapping backdrop
+    backdrop?.addEventListener('click', closeMenu);
 </script>
