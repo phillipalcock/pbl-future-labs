@@ -1,47 +1,106 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
+import { products } from '../data/products';
 
-const heroContent = `
-# AI-Powered Project-Based Learning
-
-Transform education through meaningful, real-world learning missions designed with AI integration at the core. PBL Future Labs empowers educators and students to move beyond traditional worksheets and unlock authentic, community-connected learning experiences.
-
-## Our Vision
-
-We believe project-based learning—enhanced by AI—breaks down barriers, saves teachers time, elevates student voice, and connects learning to real-world impact.
-
-**Learning missions** are the heart of our approach: thoughtfully designed projects that combine academic rigor with authentic problem-solving, powered by AI tools that adapt to each learner's needs.
-
-### Explore PBL Future Labs
-
-- **Learning Missions**: Discover curated missions aligned with standards
-- **Project Examples**: See real student work and inspiring case studies
-- **Mission Builder**: Create your own AI-assisted learning missions
-- **Micro Credentials**: Earn badges for project mastery
-`;
+const featuredBooks = products.filter(p => p.category === 'book').slice(0, 3);
+const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3);
 ---
 
-<Layout title="Welcome to PBL Future Labs">
-    <div class="max-w-4xl">
-        <Markdown content={heroContent} class="prose prose-invert max-w-none mb-12" />
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <a href="/missions" class="card bg-blue-900/40 border border-blue-400/50 hover:border-blue-400 transition p-6">
-                <h3 class="text-xl font-bold mb-2">Explore Learning Missions</h3>
-                <p class="text-sm text-gray-200">Browse hundreds of learning missions designed for authentic impact</p>
-            </a>
-            <a href="/projects" class="card bg-purple-900/40 border border-purple-400/50 hover:border-purple-400 transition p-6">
-                <h3 class="text-xl font-bold mb-2">See Real Projects</h3>
-                <p class="text-sm text-gray-200">Discover inspiring student work and real-world applications</p>
-            </a>
-            <a href="/builder" class="card bg-pink-900/40 border border-pink-400/50 hover:border-pink-400 transition p-6">
-                <h3 class="text-xl font-bold mb-2">Build a Mission</h3>
-                <p class="text-sm text-gray-200">Create custom learning missions with AI assistance</p>
-            </a>
-            <a href="/credentials" class="card bg-teal-900/40 border border-teal-400/50 hover:border-teal-400 transition p-6">
-                <h3 class="text-xl font-bold mb-2">Earn Credentials</h3>
-                <p class="text-sm text-gray-200">Unlock micro-credentials demonstrating project mastery</p>
-            </a>
+<Layout title="PBL Future Labs - Books, Courses & Educational Resources">
+    <!-- Hero Section -->
+    <section class="py-20 text-center max-w-5xl">
+        <h1 class="text-5xl font-bold text-gray-900 mb-6">Transform Education with Project-Based Learning</h1>
+        <p class="text-xl text-gray-600 mb-4">Discover expert-curated books, micro-credentials, and resources to enhance teaching and learning</p>
+        <p class="text-lg text-gray-500 mb-8">Join educators and professionals building the future of education</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+            <a href="/shop" class="btn btn-primary btn-lg text-white rounded-lg px-8">Shop Books & Products</a>
+            <a href="/courses" class="btn btn-secondary btn-lg text-white rounded-lg px-8">Browse Courses</a>
         </div>
-    </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-50 rounded-xl mb-16 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold text-blue-600 mb-2">10K+</div>
+                <p class="text-gray-600">Educators Worldwide</p>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                <p class="text-gray-600">Learning Resources</p>
+            </div>
+            <div>
+                <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
+                <p class="text-gray-600">Customer Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section class="mb-16 max-w-5xl">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Featured Books</h2>
+            <a href="/shop?category=book" class="text-blue-600 hover:text-blue-800 font-semibold">View All Books →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredBooks.map(book => (
+                <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-md">
+                    <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src={book.image} alt={book.title} class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{book.title}</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">{book.description}</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-gray-900">${book.price}</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-500">★</span>
+                                <span class="text-sm font-semibold text-gray-700">{book.rating}</span>
+                                <span class="text-xs text-gray-500">({book.reviews})</span>
+                            </div>
+                        </div>
+                        <a href={`/shop?id=${book.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Add to Cart</a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="mb-16 max-w-5xl">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900">Featured Micro-Credentials</h2>
+            <a href="/courses" class="text-blue-600 hover:text-blue-800 font-semibold">View All Courses →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredCourses.map(course => (
+                <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-md">
+                    <div class="aspect-video bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src={course.image} alt={course.title} class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-5">
+                        <div class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded mb-2">Micro-Credential</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2">{course.title}</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">{course.description}</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-gray-900">${course.price}</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-yellow-500">★</span>
+                                <span class="text-sm font-semibold text-gray-700">{course.rating}</span>
+                                <span class="text-xs text-gray-500">({course.reviews})</span>
+                            </div>
+                        </div>
+                        <a href={`/courses?id=${course.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Enroll Now</a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl mb-16 max-w-5xl text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Learning Journey?</h2>
+        <p class="text-lg mb-8 opacity-90">Explore our complete catalog of professional development resources</p>
+        <a href="/shop" class="btn btn-ghost text-white hover:bg-white/20 btn-lg rounded-lg px-8">Explore All Products</a>
+    </section>
 </Layout>

@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { products } from '../data/products';
+
+const books = products.filter(p => p.category === 'book');
+const bundles = products.filter(p => p.category === 'bundle');
+---
+
+<Layout title="Shop - Books & Products">
+    <div class="max-w-6xl">
+        <!-- Page Header -->
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Books & Educational Products</h1>
+            <p class="text-lg text-gray-600">Discover expert-authored books on project-based learning, education technology, and professional development</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="mb-8 flex gap-4 flex-wrap">
+            <button class="btn btn-sm btn-primary text-white rounded">All Products</button>
+            <button class="btn btn-sm btn-outline rounded" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
+            <button class="btn btn-sm btn-outline rounded" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
+        </div>
+
+        <!-- Books Grid -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Books</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {books.map(book => (
+                    <div class="card bg-white border border-gray-200 hover:border-gray-400 transition-all shadow-sm hover:shadow-lg">
+                        <div class="aspect-video bg-gray-200 overflow-hidden rounded-t-lg">
+                            <img src={book.image} alt={book.title} class="w-full h-full object-cover hover:scale-105 transition-transform" />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-900 mb-3 line-clamp-2">{book.title}</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3">{book.description}</p>
+
+                            <!-- Rating -->
+                            <div class="flex items-center gap-2 mb-4">
+                                <div class="flex items-center">
+                                    <span class="text-yellow-500">★</span>
+                                    <span class="text-sm font-semibold text-gray-700 ml-1">{book.rating}</span>
+                                </div>
+                                <span class="text-xs text-gray-500">({book.reviews} reviews)</span>
+                            </div>
+
+                            <!-- Price and CTA -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-gray-900">${book.price}</span>
+                                <button class="btn btn-primary btn-sm text-white rounded" data-product-id={book.id}>
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- Bundles Section -->
+        {bundles.length > 0 && (
+            <section class="mb-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Special Bundles - Save Big!</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {bundles.map(bundle => (
+                        <div class="card bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 shadow-md hover:shadow-lg transition-all">
+                            <div class="aspect-video bg-gray-300 overflow-hidden rounded-t-lg">
+                                <img src={bundle.image} alt={bundle.title} class="w-full h-full object-cover" />
+                            </div>
+                            <div class="p-6">
+                                <div class="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full mb-3">Limited Bundle</div>
+                                <h3 class="font-bold text-xl text-gray-900 mb-3">{bundle.title}</h3>
+                                <p class="text-gray-700 mb-4">{bundle.description}</p>
+
+                                <!-- Rating -->
+                                <div class="flex items-center gap-2 mb-4">
+                                    <div class="flex items-center">
+                                        <span class="text-yellow-500">★</span>
+                                        <span class="text-sm font-semibold text-gray-700 ml-1">{bundle.rating}</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">({bundle.reviews} reviews)</span>
+                                </div>
+
+                                <!-- Price and CTA -->
+                                <div class="flex items-center justify-between pt-4 border-t border-blue-200">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-600">Bundle Price</span>
+                                        <span class="text-3xl font-bold text-blue-600">${bundle.price}</span>
+                                    </div>
+                                    <button class="btn btn-primary btn-lg text-white rounded" data-product-id={bundle.id}>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )}
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-gray-100 rounded-lg text-center mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Can't find what you're looking for?</h2>
+            <p class="text-gray-600 mb-6">Check out our micro-credential courses for specialized professional development</p>
+            <a href="/courses" class="btn btn-primary btn-lg text-white rounded">Browse Courses</a>
+        </section>
+    </div>
+
+    <script>
+        // Simple add to cart functionality (basic version)
+        document.querySelectorAll('[data-product-id]').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product-id');
+                const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+                const existingItem = cartItems.find(item => item.productId === productId);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cartItems.push({ productId, quantity: 1 });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+
+                // Visual feedback
+                this.textContent = 'Added!';
+                this.classList.add('btn-success');
+                setTimeout(() => {
+                    this.textContent = 'Add to Cart';
+                    this.classList.remove('btn-success');
+                }, 1500);
+            });
+        });
+    </script>
+</Layout>
