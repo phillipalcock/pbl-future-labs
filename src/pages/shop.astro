@@ -43,12 +43,9 @@ const bundles = products.filter(p => p.category === 'bundle');
                                 <span class="text-xs text-gray-500">({book.reviews} reviews)</span>
                             </div>
 
-                            <!-- Price and CTA -->
+                            <!-- Price -->
                             <div class="flex items-center justify-between">
-                                <span class="text-2xl font-bold text-gray-900">${book.price}</span>
-                                <button class="btn btn-primary btn-sm text-white rounded" data-product-id={book.id}>
-                                    Add to Cart
-                                </button>
+                                <span class="text-2xl font-bold text-blue-600">${book.price}</span>
                             </div>
                         </div>
                     </div>
@@ -80,15 +77,10 @@ const bundles = products.filter(p => p.category === 'bundle');
                                     <span class="text-xs text-gray-500">({bundle.reviews} reviews)</span>
                                 </div>
 
-                                <!-- Price and CTA -->
-                                <div class="flex items-center justify-between pt-4 border-t border-blue-200">
-                                    <div class="flex flex-col">
-                                        <span class="text-xs text-gray-600">Bundle Price</span>
-                                        <span class="text-3xl font-bold text-blue-600">${bundle.price}</span>
-                                    </div>
-                                    <button class="btn btn-primary btn-lg text-white rounded" data-product-id={bundle.id}>
-                                        Add to Cart
-                                    </button>
+                                <!-- Price -->
+                                <div class="pt-4 border-t border-blue-200">
+                                    <span class="text-xs text-gray-600">Bundle Price</span>
+                                    <span class="text-3xl font-bold text-blue-600 block">${bundle.price}</span>
                                 </div>
                             </div>
                         </div>
@@ -104,31 +96,4 @@ const bundles = products.filter(p => p.category === 'bundle');
             <a href="/courses" class="btn btn-primary btn-lg text-white rounded">Browse Courses</a>
         </section>
     </div>
-
-    <script>
-        // Simple add to cart functionality (basic version)
-        document.querySelectorAll('[data-product-id]').forEach(button => {
-            button.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product-id');
-                const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
-                const existingItem = cartItems.find(item => item.productId === productId);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cartItems.push({ productId, quantity: 1 });
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-
-                // Visual feedback
-                this.textContent = 'Added!';
-                this.classList.add('btn-success');
-                setTimeout(() => {
-                    this.textContent = 'Add to Cart';
-                    this.classList.remove('btn-success');
-                }, 1500);
-            });
-        });
-    </script>
 </Layout>

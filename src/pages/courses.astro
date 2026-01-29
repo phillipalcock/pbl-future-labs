@@ -73,12 +73,9 @@ const courses = products.filter(p => p.category === 'course');
                             <span class="text-xs text-gray-500">({course.reviews} reviews)</span>
                         </div>
 
-                        <!-- Price and CTA -->
-                        <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-gray-900">${course.price}</span>
-                            <button class="btn btn-primary btn-sm text-white rounded" data-product-id={course.id}>
-                                Enroll Now
-                            </button>
+                        <!-- Price -->
+                        <div>
+                            <span class="text-2xl font-bold text-blue-600">${course.price}</span>
                         </div>
                     </div>
                 </div>
@@ -137,31 +134,4 @@ const courses = products.filter(p => p.category === 'course');
             </div>
         </section>
     </div>
-
-    <script>
-        // Simple add to cart functionality
-        document.querySelectorAll('[data-product-id]').forEach(button => {
-            button.addEventListener('click', function() {
-                const productId = this.getAttribute('data-product-id');
-                const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
-                const existingItem = cartItems.find(item => item.productId === productId);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cartItems.push({ productId, quantity: 1 });
-                }
-
-                localStorage.setItem('cart', JSON.stringify(cartItems));
-
-                // Visual feedback
-                this.textContent = 'Added!';
-                this.classList.add('btn-success');
-                setTimeout(() => {
-                    this.textContent = 'Enroll Now';
-                    this.classList.remove('btn-success');
-                }, 1500);
-            });
-        });
-    </script>
 </Layout>

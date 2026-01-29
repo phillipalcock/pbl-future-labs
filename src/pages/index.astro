@@ -59,7 +59,6 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
                                 <span class="text-xs text-gray-500">({book.reviews})</span>
                             </div>
                         </div>
-                        <a href={`/shop?id=${book.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Add to Cart</a>
                     </div>
                 </div>
             ))}
@@ -90,7 +89,6 @@ const featuredCourses = products.filter(p => p.category === 'course').slice(0, 3
                                 <span class="text-xs text-gray-500">({course.reviews})</span>
                             </div>
                         </div>
-                        <a href={`/courses?id=${course.id}`} class="btn btn-primary btn-sm w-full text-white rounded">Enroll Now</a>
                     </div>
                 </div>
             ))}
