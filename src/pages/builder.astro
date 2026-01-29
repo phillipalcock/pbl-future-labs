@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Markdown from '../components/Markdown.astro';
+import ShapeEditor from '../components/blobs/_components/ShapeEditor.tsx';
+
+const builderContent = `
+# Mission Builder
+
+Create your own AI-powered learning missions with our interactive builder. Get AI suggestions for activities, scaffolds, assessments, and resources.
+
+## Mission Creation Steps
+
+1. **Define Your Vision** - What community need or student interest drives this mission?
+2. **Set Learning Goals** - What standards and competencies will students develop?
+3. **Design Activities** - Plan the sequence of learning experiences
+4. **Build Assessments** - Create rubrics and checkpoints for student growth
+5. **Gather Resources** - Curate materials, tools, and community partnerships
+6. **Launch & Iterate** - Refine based on real student learning
+
+## AI-Assisted Features
+
+Our Mission Builder uses AI to help you:
+
+- **Generate ideas** for engaging project challenges aligned to standards
+- **Scaffold learning** with differentiated supports and activity sequences
+- **Create rubrics** that emphasize authentic competencies
+- **Find resources** including texts, videos, tools, and community partnerships
+- **Adapt missions** for different contexts, grade levels, and learner needs
+
+---
+
+## Your Learning Missions
+
+Below you can manage, create, and customize learning missions. Save your creations to build a personal library of missions you use year after year.
+
+**Coming Soon**: Full mission builder with AI-powered suggestions will be available shortly. In the meantime, explore our [pre-made learning missions](/missions) or contact us to get early access to the builder.
+`;
+---
+
+<Layout title="Mission Builder">
+    <div class="max-w-4xl">
+        <Markdown content={builderContent} class="prose prose-invert max-w-none mb-12" />
+        <div class="card bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-purple-400/50 p-8 text-center">
+            <h3 class="text-2xl font-bold mb-4">Mission Builder Coming Soon</h3>
+            <p class="text-gray-200 mb-6">We're building an intelligent mission creation tool that will help you design powerful learning experiences in minutes.</p>
+            <button class="btn btn-primary" onclick="alert('Sign up for early access: Coming Q2 2026')">Get Early Access</button>
+        </div>
+    </div>
+</Layout>

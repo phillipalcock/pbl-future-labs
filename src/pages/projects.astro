@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Markdown from '../components/Markdown.astro';
+
+const projectsContent = `
+# Real-World Project Examples
+
+See inspiring student work from PBL Future Labs projects. These projects demonstrate authentic learning connected to real community impact.
+
+## Featured Projects
+
+### 1. Urban Garden Initiative - Addressing Food Security
+
+**Grade Level**: 6-8
+**Duration**: 8 weeks
+
+Students in an urban community designed and built raised garden beds to address local food insecurity. Using AI tools, they analyzed neighborhood demographics, calculated ROI, and created a sustainability plan. The project resulted in a permanent community garden serving 50+ families.
+
+**Student Outcomes**:
+- Applied data analysis to real problems
+- Developed leadership and collaboration skills
+- Created actionable solutions for community benefit
+
+### 2. Climate Action Communication Campaign
+
+**Grade Level**: 9-12
+**Duration**: 10 weeks
+
+High school students created a multimedia campaign about local climate challenges. They researched environmental data, interviewed community leaders, and produced videos, podcasts, and infographics using AI-assisted tools for content creation. The campaign reached 10,000+ people across social media.
+
+**Student Outcomes**:
+- Mastered climate science concepts
+- Developed digital media and communication skills
+- Built advocacy and persuasion abilities
+
+### 3. Local History Digital Archive
+
+**Grade Level**: 3-5
+**Duration**: 6 weeks
+
+Elementary students interviewed elderly community members, digitized family photographs, and created an interactive digital archive of local history. Using AI tools to organize and tag content, they preserved 500+ historical artifacts and shared them with the community library.
+
+**Student Outcomes**:
+- Developed interviewing and documentation skills
+- Practiced digital literacy and organization
+- Connected with community elders and learned local history
+
+### 4. Accessible Design for Our School
+
+**Grade Level**: 7-9
+**Duration**: 8 weeks
+
+Middle school students conducted accessibility audits of their school building, interviewed students with disabilities, and designed solutions to improve accessibility. Their recommendations led to 12 physical improvements and a digital accessibility toolkit.
+
+**Student Outcomes**:
+- Learned empathetic design principles
+- Applied engineering thinking to real problems
+- Advocated for inclusive change
+
+---
+
+## What Makes These Projects Work
+
+✓ **Real-world relevance** - Projects address authentic community needs
+✓ **Student agency** - Learners make meaningful decisions throughout
+✓ **Cross-disciplinary learning** - Integration of multiple subjects
+✓ **AI-enhanced efficiency** - Tools amplify student capabilities
+✓ **Community partnership** - Genuine collaboration with local stakeholders
+✓ **Measurable impact** - Tangible outcomes students can see and feel
+
+Ready to launch your own learning mission? [Create a Mission →](/builder)
+`;
+---
+
+<Layout title="Project Examples">
+    <div class="max-w-4xl">
+        <Markdown content={projectsContent} class="prose prose-invert max-w-none" />
+    </div>
+</Layout>
