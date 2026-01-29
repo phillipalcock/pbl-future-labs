@@ -1,6 +1,4 @@
 ---
-import Logo from '../components/Logo.astro';
-
 const navItems = [
     { linkText: 'Home', href: '/' },
     { linkText: 'Shop', href: '/shop' },
@@ -13,9 +11,13 @@ const navItems = [
 <nav class="py-6 sm:py-8 border-b border-gray-200">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <!-- Logo and Title -->
-        <a href="/" class="flex items-center gap-3 flex-shrink-0">
-            <Logo />
-            <span class="font-bold text-xl text-gray-900">PBL Future Labs</span>
+        <a href="/" class="flex-shrink-0">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-purple-600 flex items-center justify-center font-bold text-white text-lg">
+                    PB
+                </div>
+                <span class="font-bold text-xl text-gray-900">PBL Future Labs</span>
+            </div>
         </a>
 
         <!-- Navigation Menu -->
