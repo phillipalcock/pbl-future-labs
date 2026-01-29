@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+    { label: 'Coaching' }
+];
+
+const services = [
+    {
+        title: "School-Wide PBL Implementation",
+        description: "Transform your entire school culture with a comprehensive rollout strategy tailored to your community.",
+        icon: "🏫"
+    },
+    {
+        title: "Teacher Workshops",
+        description: "Hands-on training sessions that equip educators with practical PBL skills they can use immediately.",
+        icon: "👩‍🏫"
+    },
+    {
+        title: "Curriculum Design",
+        description: "Custom project designs aligned to your standards, student interests, and local community needs.",
+        icon: "📐"
+    },
+    {
+        title: "Leadership Coaching",
+        description: "Support for principals and administrators driving instructional change from the top.",
+        icon: "🎯"
+    }
+];
+---
+
+<Layout title="On-Demand Coaching - PBL Future Labs">
+    <div class="max-w-4xl">
+        <Breadcrumb items={breadcrumbItems} />
+
+        <!-- Hero Section -->
+        <section class="py-12 mb-8">
+            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full mb-4">On-Demand Coaching</span>
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Your School. Your Vision.<br />
+                <span class="text-blue-600">We'll Help You Get There.</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl">
+                No project too big or too small. From a single workshop to a multi-year transformation, Thom Markham and the PBL Future Labs team partner with schools ready to make real change.
+            </p>
+            <a href="mailto:hello@pblfuturelabs.com?subject=Coaching Inquiry" class="btn btn-primary btn-lg text-white rounded-lg px-8 no-underline shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all">
+                Start the Conversation
+            </a>
+        </section>
+
+        <!-- The Approach -->
+        <section class="mb-16 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 sm:p-10 border border-gray-100">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">The Approach</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                We don't do cookie-cutter. Every engagement starts with listening—understanding your school's unique challenges, strengths, and aspirations. Then we design a coaching plan that fits your timeline, budget, and goals.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Flexible Scheduling</span>
+                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Virtual or On-Site</span>
+                <span class="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm">Ongoing Support</span>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {services.map(service => (
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                        <span class="text-4xl mb-4 block">{service.icon}</span>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                        <p class="text-gray-600">{service.description}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">How It Works</h2>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-1">Discovery Call</h3>
+                        <p class="text-gray-600">A free 30-minute conversation to understand your needs and explore possibilities.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-1">Custom Proposal</h3>
+                        <p class="text-gray-600">We design a coaching plan with clear outcomes, timeline, and transparent pricing.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-1">Implementation</h3>
+                        <p class="text-gray-600">Hands-on coaching, workshops, and support to bring your vision to life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="mb-16 bg-gray-900 text-white rounded-2xl p-8 sm:p-10">
+            <blockquote class="text-xl sm:text-2xl font-medium mb-6 leading-relaxed">
+                "Thom didn't just train our teachers—he helped us reimagine what school could be. Three years later, we're still building on that foundation."
+            </blockquote>
+            <div>
+                <p class="font-semibold">Dr. Rachel Kim</p>
+                <p class="text-gray-400">Superintendent, Riverside Unified School District</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-12 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-center mb-8 text-white shadow-lg">
+            <h2 class="text-3xl font-bold mb-4">Ready to Talk?</h2>
+            <p class="text-lg opacity-90 mb-6 max-w-xl mx-auto">
+                Whether you're exploring ideas or ready to commit, we'd love to hear from you.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="mailto:hello@pblfuturelabs.com?subject=Coaching Inquiry" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-lg px-8 no-underline font-semibold">
+                    Email Us
+                </a>
+                <a href="/about" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-lg px-8 no-underline">
+                    Learn About Thom
+                </a>
+            </div>
+        </section>
+    </div>
+</Layout>
