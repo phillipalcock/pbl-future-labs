@@ -13,31 +13,31 @@ export const products: Product[] = [
   // Books
   {
     id: 'book-1',
-    title: 'Project-Based Learning: A Guide to Real-World Impact',
-    description: 'Learn how to design and implement transformative project-based learning experiences that drive real-world impact.',
+    title: 'Project Based Learning Handbook',
+    description: 'A foundational guide to implementing project-based learning in educational settings. Published 2003.',
     price: 34.99,
     category: 'book',
-    image: 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=400&h=500&fit=crop',
+    image: '📚',
     rating: 4.8,
     reviews: 127
   },
   {
     id: 'book-2',
-    title: 'The Future of Education: AI and Personalized Learning',
-    description: 'Explore how artificial intelligence is revolutionizing personalized education and student outcomes.',
+    title: 'Project Based Learning: Design',
+    description: 'Master the design principles and frameworks for creating effective project-based learning experiences. Published 2011.',
     price: 39.99,
     category: 'book',
-    image: 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&h=500&fit=crop',
+    image: '📚',
     rating: 4.7,
     reviews: 89
   },
   {
     id: 'book-3',
-    title: 'Microlearning Strategies for Modern Professionals',
-    description: 'Master bite-sized learning techniques for busy professionals looking to upskill continuously.',
+    title: 'Redefining Smart: Awakening Students\' Power to Reimagine Their World',
+    description: 'Transform education by empowering students to think critically and reimagine solutions to real-world problems. Published 2015.',
     price: 29.99,
     category: 'book',
-    image: 'https://images.unsplash.com/photo-1495446815901-a7297e01c869?w=400&h=500&fit=crop',
+    image: '📚',
     rating: 4.6,
     reviews: 156
   },
@@ -141,7 +141,7 @@ export const products: Product[] = [
     description: 'Get 3 bestselling books + 2 micro-credentials. Save $120 with this comprehensive package.',
     price: 449.99,
     category: 'bundle',
-    image: 'https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=400&h=500&fit=crop',
+    image: '📦',
     rating: 4.9,
     reviews: 89
   },
@@ -151,7 +151,7 @@ export const products: Product[] = [
     description: '2 popular micro-credentials perfect for career advancement. Limited time offer.',
     price: 229.99,
     category: 'bundle',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=500&fit=crop',
+    image: '⚡',
     rating: 4.8,
     reviews: 67
   }
