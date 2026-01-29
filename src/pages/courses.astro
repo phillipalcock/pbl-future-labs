@@ -17,100 +17,76 @@ const breadcrumbItems = [
         <!-- Page Header -->
         <div class="mb-12">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Micro-Credential Courses</h1>
-            <p class="text-lg text-gray-600">Earn recognized credentials through specialized, focused learning programs designed for busy professionals</p>
+            <p class="text-lg text-gray-600">Practical, hands-on courses for K-12 educators who want to integrate AI into their project-based learning practice. Each course includes real projects you implement with your own students.</p>
         </div>
 
         <!-- Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-            <div class="bg-blue-50 rounded-2xl p-6 text-center active:scale-95 transition-transform">
+            <div class="bg-blue-50 rounded-2xl p-6 text-center">
                 <div class="text-3xl font-bold text-blue-600 mb-2">4-7 Weeks</div>
-                <p class="text-gray-600">Flexible pacing fits your schedule</p>
+                <p class="text-gray-600">Clear time commitment upfront</p>
             </div>
-            <div class="bg-green-50 rounded-2xl p-6 text-center active:scale-95 transition-transform">
+            <div class="bg-green-50 rounded-2xl p-6 text-center">
                 <div class="text-3xl font-bold text-green-600 mb-2">100% Online</div>
-                <p class="text-gray-600">Learn anywhere, anytime</p>
+                <p class="text-gray-600">Self-paced, learn on your schedule</p>
             </div>
-            <div class="bg-amber-50 rounded-2xl p-6 text-center active:scale-95 transition-transform">
-                <div class="text-3xl font-bold text-amber-600 mb-2">Recognized</div>
-                <p class="text-gray-600">Industry-recognized credentials</p>
+            <div class="bg-amber-50 rounded-2xl p-6 text-center">
+                <div class="text-3xl font-bold text-amber-600 mb-2">30-Day Guarantee</div>
+                <p class="text-gray-600">No questions asked refund policy</p>
             </div>
         </div>
 
         <!-- Courses Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="space-y-8 mb-16">
             {courses.map(course => (
-                <div class="card card-hover bg-white rounded-2xl overflow-hidden shadow-sm active:scale-[0.98] transition-transform">
-                    <!-- Icon -->
-                    <div class="aspect-[4/3] bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden flex items-center justify-center">
-                        <span class="text-7xl">{course.image}</span>
-                    </div>
-
-                    <div class="p-6">
-                        <!-- Badge -->
-                        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full mb-3">Micro-Credential</div>
-
-                        <!-- Title -->
-                        <h3 class="font-bold text-lg text-gray-900 mb-3 line-clamp-2">{course.title}</h3>
-
-                        <!-- Description -->
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{course.description}</p>
-
-                        <!-- Features -->
-                        <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                            <li class="flex gap-2">
-                                <span class="text-green-600">✓</span>
-                                <span>Self-paced learning</span>
-                            </li>
-                            <li class="flex gap-2">
-                                <span class="text-green-600">✓</span>
-                                <span>Hands-on projects</span>
-                            </li>
-                            <li class="flex gap-2">
-                                <span class="text-green-600">✓</span>
-                                <span>Certificate of completion</span>
-                            </li>
-                        </ul>
-
-                        <!-- Rating -->
-                        <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-100">
-                            <div class="flex items-center">
-                                <span class="text-yellow-500">★</span>
-                                <span class="text-sm font-semibold text-gray-700 ml-1">{course.rating}</span>
-                            </div>
-                            <span class="text-xs text-gray-500">({course.reviews} reviews)</span>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="grid grid-cols-1 md:grid-cols-3">
+                        <!-- Icon + Badge -->
+                        <div class="aspect-[4/3] md:aspect-auto bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-8">
+                            <span class="text-8xl">{course.image}</span>
                         </div>
 
-                        <!-- Price -->
-                        <div>
-                            <span class="text-2xl font-bold text-gray-900">${course.price}</span>
+                        <!-- Content -->
+                        <div class="md:col-span-2 p-6 sm:p-8">
+                            <div class="flex flex-wrap items-center gap-2 mb-3">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Micro-Credential</span>
+                                {course.duration && <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">{course.duration}</span>}
+                                <div class="flex items-center gap-1 ml-auto">
+                                    <span class="text-yellow-500">&#9733;</span>
+                                    <span class="text-sm font-semibold text-gray-700">{course.rating}</span>
+                                </div>
+                            </div>
+
+                            <h3 class="font-bold text-xl text-gray-900 mb-3">{course.title}</h3>
+                            <p class="text-gray-600 mb-4">{course.description}</p>
+
+                            {course.curriculum && course.curriculum.length > 0 && (
+                                <div class="mb-4">
+                                    <h4 class="font-semibold text-gray-900 text-sm mb-2">What You'll Cover:</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        {course.curriculum.map(item => (
+                                            <li class="flex gap-2">
+                                                <span class="text-blue-600 flex-shrink-0">&#8226;</span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                                <span class="text-2xl font-bold text-gray-900">${course.price}</span>
+                                <div class="flex gap-2 text-xs text-gray-500">
+                                    <span>&#10003; Self-paced</span>
+                                    <span>&#10003; Hands-on projects</span>
+                                    <span>&#10003; Certificate</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             ))}
         </div>
-
-        <!-- What You'll Learn Section -->
-        <section class="bg-white rounded-2xl p-8 mb-12 shadow-sm">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">What You'll Learn</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">Comprehensive Curriculum</h3>
-                    <p class="text-gray-600">Each micro-credential course is carefully designed to provide practical, immediately applicable skills in your field of professional development.</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">Expert Instruction</h3>
-                    <p class="text-gray-600">Learn from experienced educators and industry professionals who bring real-world expertise and practical insights to every course.</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">Interactive Projects</h3>
-                    <p class="text-gray-600">Apply your learning through hands-on projects that mirror real-world scenarios, ensuring you can use your new skills immediately.</p>
-                </div>
-                <div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">Ongoing Support</h3>
-                    <p class="text-gray-600">Access to course materials, discussion forums, and resources available throughout your learning journey and beyond.</p>
-                </div>
-            </div>
-        </section>
 
         <!-- FAQ Section -->
         <section class="mb-12">
@@ -118,32 +94,33 @@ const breadcrumbItems = [
             <div class="space-y-4">
                 <div class="bg-white rounded-2xl p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">Do I need prerequisites?</h3>
-                    <p class="text-gray-600">Most micro-credentials are designed for professionals with general knowledge in education. Specific prerequisites are listed in each course description.</p>
+                    <p class="text-gray-600">Most courses assume general teaching experience but no prior AI expertise. If you can use email and a web browser, you have the technical skills you need.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 shadow-sm">
                     <h3 class="font-bold text-gray-900 mb-2">How long do I have access?</h3>
-                    <p class="text-gray-600">You'll have lifetime access to all course materials and can complete at your own pace, though most courses take 4-7 weeks.</p>
+                    <p class="text-gray-600">Lifetime access to all course materials. Complete at your own pace — the weekly structure is a guide, not a deadline.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <h3 class="font-bold text-gray-900 mb-2">Are credentials recognized?</h3>
-                    <p class="text-gray-600">Yes, our micro-credentials are recognized by leading educational institutions and employers in the field.</p>
+                    <h3 class="font-bold text-gray-900 mb-2">What's the refund policy?</h3>
+                    <p class="text-gray-600">30-day, no-questions-asked money-back guarantee. Email hello@pblfuturelabs.com within 30 days of purchase for a full refund. No forms, no hoops.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-bold text-gray-900 mb-2">Can my school purchase for multiple teachers?</h3>
+                    <p class="text-gray-600">Yes. Email us at hello@pblfuturelabs.com for team and district pricing.</p>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
         <section class="py-12 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 rounded-2xl text-center text-white mb-8 shadow-xl">
-            <h2 class="text-3xl font-bold mb-4">Ready to Advance Your Career?</h2>
-            <p class="text-lg mb-6 opacity-90">Start your first micro-credential today and join thousands of educators advancing their skills</p>
+            <h2 class="text-3xl font-bold mb-4">Not Sure Where to Start?</h2>
+            <p class="text-lg mb-6 opacity-90">Grab the free PBL 2.0 Starter Guide first, or email us and we'll point you to the right course.</p>
             <div class="flex gap-4 justify-center flex-wrap">
-                <button class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl font-semibold min-h-[48px] active:scale-95 transition-transform">Start Free Trial</button>
-                <a href="/shop" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-xl no-underline min-h-[48px] active:scale-95 transition-transform">View All Resources</a>
+                <a href="/#free-guide" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl font-semibold no-underline min-h-[48px] active:scale-95 transition-transform">Get the Free Guide</a>
+                <a href="mailto:hello@pblfuturelabs.com?subject=Course Question" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-xl no-underline min-h-[48px] active:scale-95 transition-transform">Email Us</a>
             </div>
-            <div class="mt-6">
-                <span class="guarantee-badge bg-white/10 border-white/20 text-white">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    30-Day Money-Back Guarantee
-                </span>
+            <div class="mt-6 text-sm opacity-80">
+                <span>30-day money-back guarantee on all courses</span>
             </div>
         </section>
     </div>
