@@ -41,36 +41,6 @@ export const products: Product[] = [
     rating: 4.6,
     reviews: 156
   },
-  {
-    id: 'book-4',
-    title: 'Building Inclusive Learning Communities',
-    description: 'Create welcoming, accessible learning environments where every student can thrive.',
-    price: 36.99,
-    category: 'book',
-    image: 'https://images.unsplash.com/photo-1517842645022-5f2f437e628a?w=400&h=500&fit=crop',
-    rating: 4.9,
-    reviews: 203
-  },
-  {
-    id: 'book-5',
-    title: 'Authentic Assessment in the Digital Age',
-    description: 'Learn proven methods for assessing student learning through authentic, meaningful projects.',
-    price: 44.99,
-    category: 'book',
-    image: 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=400&h=500&fit=crop',
-    rating: 4.7,
-    reviews: 98
-  },
-  {
-    id: 'book-6',
-    title: 'Community Engagement in Education',
-    description: 'Connect schools with communities to create meaningful learning experiences for all students.',
-    price: 31.99,
-    category: 'book',
-    image: 'https://images.unsplash.com/photo-1507842717881-b1a53e46c15e?w=400&h=500&fit=crop',
-    rating: 4.8,
-    reviews: 112
-  },
 
   // Courses
   {
