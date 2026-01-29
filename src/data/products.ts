@@ -13,31 +13,31 @@ export const products: Product[] = [
   // Books
   {
     id: 'book-1',
-    title: 'Project Based Learning Handbook',
-    description: 'A foundational guide to implementing project-based learning in educational settings. Published 2003.',
+    title: 'Project-Based Learning Handbook: A Guide to Standards-Focused PBL',
+    description: 'A comprehensive guide to standards-focused project-based learning for middle and high school teachers. Second edition by Thom Markham.',
     price: 34.99,
     category: 'book',
-    image: '📚',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B00M7EWVIO.01.L.jpg',
     rating: 4.8,
     reviews: 127
   },
   {
     id: 'book-2',
-    title: 'Project Based Learning: Design',
-    description: 'Master the design principles and frameworks for creating effective project-based learning experiences. Published 2011.',
+    title: 'Project Based Learning: Design and Coaching Guide',
+    description: 'Expert tools for innovation and inquiry for K-12 educators. A practical guide by Thom Markham for designing and implementing PBL in your classroom.',
     price: 39.99,
     category: 'book',
-    image: '📚',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B01GTQHAHY.01.L.jpg',
     rating: 4.7,
     reviews: 89
   },
   {
     id: 'book-3',
     title: 'Redefining Smart: Awakening Students\' Power to Reimagine Their World',
-    description: 'Transform education by empowering students to think critically and reimagine solutions to real-world problems. Published 2015.',
+    description: 'Transform education by empowering students to think critically and reimagine solutions to real-world problems. By Thom Markham.',
     price: 29.99,
     category: 'book',
-    image: '📚',
+    image: 'https://images-na.ssl-images-amazon.com/images/P/B00TMNLV2C.01.L.jpg',
     rating: 4.6,
     reviews: 156
   },
