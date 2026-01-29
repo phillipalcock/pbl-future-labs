@@ -11,7 +11,7 @@ export default {
     theme: {
         extend: {
             backgroundImage: {
-                'grid-pattern': `linear-gradient(to bottom, theme('colors.neutral.950 / 0%'), theme('colors.neutral.950 / 100%')), url('${noiseDataUri}')`
+                'grid-pattern': `linear-gradient(to bottom, theme('colors.white / 100%'), theme('colors.gray.50 / 100%'))`
             },
             colors: {
                 neutral: colors.neutral
@@ -26,11 +26,23 @@ export default {
             {
                 lofi: {
                     ...require('daisyui/src/theming/themes')['lofi'],
-                    primary: '#F67280',
-                    'primary-content': '#1f1f1f',
-                    secondary: '#C06C84',
-                    info: '#F67280',
-                    'info-content': '#1f1f1f'
+                    primary: '#2563EB',
+                    'primary-content': '#ffffff',
+                    secondary: '#64748B',
+                    'secondary-content': '#ffffff',
+                    accent: '#3B82F6',
+                    'base-100': '#ffffff',
+                    'base-200': '#F3F4F6',
+                    'base-300': '#E5E7EB',
+                    'base-content': '#1F2937',
+                    info: '#2563EB',
+                    'info-content': '#ffffff',
+                    success: '#10B981',
+                    'success-content': '#ffffff',
+                    warning: '#F59E0B',
+                    'warning-content': '#ffffff',
+                    error: '#EF4444',
+                    'error-content': '#ffffff'
                 }
             }
         ]
