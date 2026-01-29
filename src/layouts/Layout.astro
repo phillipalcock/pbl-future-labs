@@ -44,5 +44,109 @@ const { title } = Astro.props;
         </div>
         <!-- Mobile Bottom Navigation -->
         <BottomNav />
+
+        <!-- Pull-to-refresh indicator -->
+        <div id="pull-indicator" class="pull-indicator" style="transform: translateY(-60px); opacity: 0;">
+            <div class="bg-white rounded-full shadow-lg p-3 mt-2">
+                <svg id="pull-spinner" class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+            </div>
+        </div>
+
+        <script>
+            // Pull-to-refresh for mobile
+            (function() {
+                if (window.innerWidth >= 640) return;
+
+                const indicator = document.getElementById('pull-indicator');
+                const spinner = document.getElementById('pull-spinner');
+                let startY = 0;
+                let pulling = false;
+                const threshold = 80;
+
+                document.addEventListener('touchstart', (e) => {
+                    if (window.scrollY === 0) {
+                        startY = e.touches[0].clientY;
+                        pulling = true;
+                    }
+                }, { passive: true });
+
+                document.addEventListener('touchmove', (e) => {
+                    if (!pulling || !indicator) return;
+                    const currentY = e.touches[0].clientY;
+                    const diff = currentY - startY;
+
+                    if (diff > 0 && window.scrollY === 0) {
+                        const progress = Math.min(diff / threshold, 1);
+                        const translateY = Math.min(diff * 0.4, 50) - 60;
+                        indicator.style.transform = `translateX(-50%) translateY(${translateY}px) rotate(${progress * 360}deg)`;
+                        indicator.style.opacity = String(progress);
+                    }
+                }, { passive: true });
+
+                document.addEventListener('touchend', () => {
+                    if (!pulling || !indicator || !spinner) { pulling = false; return; }
+                    const finalOpacity = parseFloat(indicator.style.opacity || '0');
+
+                    if (finalOpacity >= 0.95) {
+                        spinner.classList.add('animate-spin');
+                        indicator.style.transform = 'translateX(-50%) translateY(0px)';
+                        indicator.style.opacity = '1';
+                        setTimeout(() => { window.location.reload(); }, 600);
+                    } else {
+                        indicator.style.transform = 'translateX(-50%) translateY(-60px)';
+                        indicator.style.opacity = '0';
+                    }
+                    pulling = false;
+                }, { passive: true });
+            })();
+
+            // Swipe navigation between pages
+            (function() {
+                if (window.innerWidth >= 640) return;
+
+                const pages = ['/', '/shop', '/courses', '/about'];
+                const currentIdx = pages.indexOf(window.location.pathname);
+                if (currentIdx === -1) return;
+
+                let touchStartX = 0;
+                let touchStartY = 0;
+                let swiping = false;
+
+                document.addEventListener('touchstart', (e) => {
+                    touchStartX = e.touches[0].clientX;
+                    touchStartY = e.touches[0].clientY;
+                    swiping = true;
+                }, { passive: true });
+
+                document.addEventListener('touchend', (e) => {
+                    if (!swiping) return;
+                    swiping = false;
+
+                    const touchEndX = e.changedTouches[0].clientX;
+                    const touchEndY = e.changedTouches[0].clientY;
+                    const diffX = touchStartX - touchEndX;
+                    const diffY = Math.abs(touchStartY - touchEndY);
+
+                    // Only trigger on horizontal swipes (not vertical scrolling)
+                    if (Math.abs(diffX) < 100 || diffY > Math.abs(diffX) * 0.5) return;
+
+                    if (diffX > 0 && currentIdx < pages.length - 1) {
+                        // Swipe left → next page
+                        document.body.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+                        document.body.style.transform = 'translateX(-30px)';
+                        document.body.style.opacity = '0.5';
+                        setTimeout(() => { window.location.href = pages[currentIdx + 1]; }, 200);
+                    } else if (diffX < 0 && currentIdx > 0) {
+                        // Swipe right → previous page
+                        document.body.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
+                        document.body.style.transform = 'translateX(30px)';
+                        document.body.style.opacity = '0.5';
+                        setTimeout(() => { window.location.href = pages[currentIdx - 1]; }, 200);
+                    }
+                }, { passive: true });
+            })();
+        </script>
     </body>
 </html>
