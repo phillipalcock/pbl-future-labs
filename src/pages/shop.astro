@@ -24,8 +24,8 @@ const breadcrumbItems = [
         <!-- Filter Section -->
         <div class="mb-8 flex gap-3 flex-wrap">
             <button class="btn btn-sm btn-primary text-white rounded-xl min-h-[44px] px-6 active:scale-95 transition-transform">All Products</button>
-            <button class="btn btn-sm btn-outline rounded-xl hover:bg-blue-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
-            <button class="btn btn-sm btn-outline rounded-xl hover:bg-blue-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
+            <button class="btn btn-sm btn-outline rounded-xl hover:bg-emerald-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
+            <button class="btn btn-sm btn-outline rounded-xl hover:bg-emerald-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
         </div>
 
         <!-- Books Grid -->
@@ -78,7 +78,7 @@ const breadcrumbItems = [
                 <h2 class="text-2xl font-bold text-gray-900 mb-8">Bundles</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {bundles.map(bundle => (
-                        <div class="card card-hover bg-gradient-to-br from-amber-50 to-blue-50 border-2 border-amber-200 rounded-2xl overflow-hidden shadow-md active:scale-[0.98] transition-transform">
+                        <div class="card card-hover bg-gradient-to-br from-amber-50 to-emerald-50 border-2 border-amber-200 rounded-2xl overflow-hidden shadow-md active:scale-[0.98] transition-transform">
                             <div class="p-6">
                                 <div class="text-6xl mb-4">{bundle.image}</div>
                                 <div class="inline-block px-3 py-1 bg-amber-500 text-white text-xs font-bold rounded-full mb-3">Best Value</div>
@@ -106,10 +106,10 @@ const breadcrumbItems = [
         )}
 
         <!-- CTA Section -->
-        <section class="py-12 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-center mb-8 text-white shadow-lg">
+        <section class="py-12 bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl text-center mb-8 text-white shadow-lg">
             <h2 class="text-2xl font-bold mb-4">Want hands-on training?</h2>
             <p class="opacity-90 mb-6">Our courses go deeper—4-7 weeks of AI + PBL skills with real student projects.</p>
-            <a href="/courses" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">Browse Courses</a>
+            <a href="/courses" class="btn btn-lg bg-white text-emerald-700 hover:bg-gray-100 rounded-xl no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">Browse Courses</a>
         </section>
     </div>
 </Layout>

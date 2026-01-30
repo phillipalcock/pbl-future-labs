@@ -21,10 +21,10 @@ export function uniqueName() {
 
 export function generateBlob(parameters?: any) {
     const gradientColors = [
-        ['#2E3192', '#1BFFFF'],
+        ['#065F46', '#34D399'],
         ['#93A5CF', '#E4EfE9'],
-        ['#BFF098', '#6FD6FF'],
-        ['#A1C4FD', '#C2E9FB'],
+        ['#BFF098', '#6EE7B7'],
+        ['#A7F3D0', '#D1FAE5'],
         ['#11998E', '#38EF7D'],
         ['#D8B5FF', '#1EAE98']
     ];

@@ -13,7 +13,7 @@ const navItems = [
         {navItems.map((item) => (
             <a
                 href={item.href}
-                class="flex flex-col items-center justify-center flex-1 h-full text-gray-500 hover:text-blue-600 active:scale-90 transition-all no-underline min-w-[64px]"
+                class="flex flex-col items-center justify-center flex-1 h-full text-gray-500 hover:text-emerald-600 active:scale-90 transition-all no-underline min-w-[64px]"
             >
                 {item.icon === 'home' && (
                     <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ const navItems = [
         const href = link.getAttribute('href');
         if (href === currentPath || (currentPath === '/' && href === '/')) {
             link.classList.remove('text-gray-500');
-            link.classList.add('text-blue-600');
+            link.classList.add('text-emerald-600');
         }
     });
 </script>
