@@ -1,0 +1,94 @@
+---
+/**
+ * ResponsiveImage Component
+ * Provides optimized responsive images with srcset, WebP support, and lazy loading
+ *
+ * Usage:
+ * <ResponsiveImage
+ *   src="/images/my-image.jpg"
+ *   alt="Image description"
+ *   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+ *   class="my-class"
+ * />
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  src,
+  alt,
+  width = 400,
+  height = 300,
+  sizes = "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw",
+  class: className = "",
+  loading = 'lazy'
+} = Astro.props;
+
+// Generate image variants for srcset
+// Common sizes: 400px, 600px, 800px (for 2x displays: 800px, 1200px, 1600px)
+const srcsetDesktop = `
+  ${src.replace(/(\.\w+)$/, '-400$1')} 400w,
+  ${src.replace(/(\.\w+)$/, '-600$1')} 600w,
+  ${src.replace(/(\.\w+)$/, '-800$1')} 800w
+`.trim().split('\n').map(s => s.trim()).join(', ');
+
+// Generate WebP variants (fallback to jpg if WebP not available)
+const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
+// For dynamic image transformation via CDN (Netlify Image CDN example)
+const imageOptimization = {
+  formats: ['webp', 'avif'],
+  densities: [1, 2],
+};
+---
+
+<picture>
+  <!-- WebP format for modern browsers (highest priority) -->
+  <source
+    type="image/webp"
+    srcset={srcsetDesktop}
+    sizes={sizes}
+  />
+
+  <!-- AVIF format for latest browsers -->
+  <source
+    type="image/avif"
+    srcset={srcsetDesktop.replace(/(\.\w+) /g, '.avif ')}
+    sizes={sizes}
+  />
+
+  <!-- Fallback JPEG for older browsers -->
+  <img
+    src={src}
+    srcset={srcsetDesktop}
+    sizes={sizes}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    decoding="async"
+    class={`object-cover ${className}`}
+    onload="this.parentElement.classList?.add('loaded')"
+  />
+</picture>
+
+<style>
+  picture {
+    display: block;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
