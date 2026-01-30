@@ -35,119 +35,125 @@ const services = [
         <Breadcrumb items={breadcrumbItems} />
 
         <!-- Hero Section -->
-        <section class="py-12 mb-8">
-            <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">Curriculum Design</span>
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Custom curriculum<br />
-                <span class="text-blue-600">built on your standards.</span>
+        <section class="py-16 mb-16 border-b border-gray-200">
+            <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Custom curriculum built on your standards.
             </h1>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl">
-                We design project-based units that meet your standards, engage your students, and fit your timeline. AI makes iteration fast. You stay in control.
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl leading-relaxed">
+                We design project-based units that meet your standards and engage your students. AI makes iteration fast. You stay in control.
             </p>
-            <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-primary btn-lg text-white rounded-xl px-8 no-underline shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all min-h-[48px] active:scale-95">
+            <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-primary text-white rounded-lg px-6 py-3 no-underline font-medium min-h-[48px] active:scale-95">
                 Let's talk
             </a>
         </section>
 
         <!-- AI Section -->
-        <section class="mb-16 bg-indigo-50 rounded-2xl p-8 sm:p-10">
-            <div class="flex items-start gap-4 mb-6">
-                <span class="text-4xl">🤖</span>
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2">AI makes this faster</h2>
-                    <p class="text-indigo-600 font-medium">Not replacing you. Supporting your expertise.</p>
-                </div>
-            </div>
-            <p class="text-lg text-gray-700 mb-6">
-                We use AI to prototype ideas, generate differentiation strategies, and iterate on designs in real time. But you stay in control. You make decisions. AI handles the busywork.
+        <section class="py-16 border-b border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">AI makes this faster</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">
+                We use AI to prototype ideas, generate differentiation strategies, and iterate on designs in real time. You stay in control. You make decisions. AI handles the busywork.
             </p>
             <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Rapid iteration</span>
-                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Personalization</span>
-                <span class="px-4 py-2 bg-white rounded-xl text-gray-700 font-medium shadow-sm">Differentiation</span>
+                <span class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium">Rapid iteration</span>
+                <span class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium">Personalization</span>
+                <span class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium">Differentiation</span>
             </div>
         </section>
 
         <!-- Services Grid -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">What We Create</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section class="py-16 border-b border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">What we create</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {services.map(service => (
-                    <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow active:scale-[0.98] transition-transform">
-                        <span class="text-4xl mb-4 block">{service.icon}</span>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                        <p class="text-gray-600">{service.description}</p>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">{service.title}</h3>
+                        <p class="text-gray-600 leading-relaxed">{service.description}</p>
                     </div>
                 ))}
             </div>
         </section>
 
         <!-- Process -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Our Process</h2>
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+        <section class="py-16 border-b border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">Process</h2>
+            <div class="space-y-10">
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 text-2xl font-bold text-blue-600">1</div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-1">Understand</h3>
-                        <p class="text-gray-600">We learn your standards, students, constraints, and aspirations. No two schools are the same.</p>
+                        <h3 class="font-bold text-gray-900 mb-2">Understand</h3>
+                        <p class="text-gray-600">We learn your standards, students, and constraints. No two schools are the same.</p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 text-2xl font-bold text-blue-600">2</div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-1">Design</h3>
-                        <p class="text-gray-600">Using AI-assisted tools and years of PBL expertise, we craft curriculum that's rigorous and engaging.</p>
+                        <h3 class="font-bold text-gray-900 mb-2">Design</h3>
+                        <p class="text-gray-600">Using AI tools and PBL expertise, we craft curriculum that's rigorous and engaging.</p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                <div class="flex gap-6">
+                    <div class="flex-shrink-0 text-2xl font-bold text-blue-600">3</div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-1">Refine</h3>
-                        <p class="text-gray-600">You review, we iterate. The final product is yours—ready to teach, easy to adapt.</p>
+                        <h3 class="font-bold text-gray-900 mb-2">Refine</h3>
+                        <p class="text-gray-600">You review, we iterate. The final product is yours—ready to teach and adapt.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- What You Get -->
-        <section class="mb-16 bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">What You Get</h2>
-            <ul class="space-y-4">
-                <li class="flex gap-3">
-                    <span class="text-green-600 font-bold text-xl">✓</span>
-                    <span class="text-gray-700"><strong class="text-gray-900">Complete Unit Plans</strong> — Day-by-day lessons, activities, and resources</span>
+        <section class="py-16 border-b border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-12">What you get</h2>
+            <ul class="space-y-6 max-w-3xl">
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 text-lg font-bold text-blue-600">✓</span>
+                    <div>
+                        <p class="font-bold text-gray-900">Complete unit plans</p>
+                        <p class="text-gray-600">Day-by-day lessons, activities, and resources</p>
+                    </div>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-green-600 font-bold text-xl">✓</span>
-                    <span class="text-gray-700"><strong class="text-gray-900">Student-Facing Materials</strong> — Project briefs, handouts, and digital resources</span>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 text-lg font-bold text-blue-600">✓</span>
+                    <div>
+                        <p class="font-bold text-gray-900">Student-facing materials</p>
+                        <p class="text-gray-600">Project briefs, handouts, and digital resources</p>
+                    </div>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-green-600 font-bold text-xl">✓</span>
-                    <span class="text-gray-700"><strong class="text-gray-900">Assessment Tools</strong> — Rubrics, reflection prompts, and portfolio guides</span>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 text-lg font-bold text-blue-600">✓</span>
+                    <div>
+                        <p class="font-bold text-gray-900">Assessment tools</p>
+                        <p class="text-gray-600">Rubrics, reflection prompts, and portfolio guides</p>
+                    </div>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-green-600 font-bold text-xl">✓</span>
-                    <span class="text-gray-700"><strong class="text-gray-900">Teacher Guides</strong> — Implementation tips, facilitation notes, and common pitfalls</span>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 text-lg font-bold text-blue-600">✓</span>
+                    <div>
+                        <p class="font-bold text-gray-900">Teacher guides</p>
+                        <p class="text-gray-600">Implementation tips, facilitation notes, and common pitfalls</p>
+                    </div>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-green-600 font-bold text-xl">✓</span>
-                    <span class="text-gray-700"><strong class="text-gray-900">Editable Files</strong> — Everything in formats you can customize and make your own</span>
+                <li class="flex gap-4">
+                    <span class="flex-shrink-0 text-lg font-bold text-blue-600">✓</span>
+                    <div>
+                        <p class="font-bold text-gray-900">Editable files</p>
+                        <p class="text-gray-600">Everything in formats you can customize and make your own</p>
+                    </div>
                 </li>
             </ul>
         </section>
 
         <!-- CTA -->
-        <section class="py-12 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-center mb-8 text-white shadow-lg">
-            <h2 class="text-3xl font-bold mb-4">Ready to redesign?</h2>
-            <p class="text-lg opacity-90 mb-6 max-w-xl mx-auto">
+        <section class="py-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Ready to redesign?</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl">
                 From single units to full sequences. We meet you where you are.
             </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl px-8 no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">
+            <div class="flex gap-3 flex-wrap">
+                <a href="mailto:hello@pblfuturelabs.com?subject=Curriculum Services Inquiry" class="btn btn-primary text-white rounded-lg px-6 py-3 no-underline font-medium min-h-[48px] active:scale-95">
                     Contact
                 </a>
-                <a href="/coaching" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-xl px-8 no-underline min-h-[48px] active:scale-95 transition-transform">
+                <a href="/coaching" class="btn btn-outline rounded-lg px-6 py-3 no-underline border border-gray-300 font-medium min-h-[48px] active:scale-95 hover:border-gray-400">
                     Coaching
                 </a>
             </div>

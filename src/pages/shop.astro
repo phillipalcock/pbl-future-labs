@@ -16,22 +16,22 @@ const breadcrumbItems = [
         <Breadcrumb items={breadcrumbItems} />
 
         <!-- Page Header -->
-        <div class="mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Books & bundles</h1>
-            <p class="text-lg text-gray-600">Thom Markham's books on project-based learning, available individually or bundled with courses.</p>
+        <div class="mb-16">
+            <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">Books & bundles</h1>
+            <p class="text-xl text-gray-600 max-w-3xl">Thom Markham's books on project-based learning, available individually or bundled with courses.</p>
         </div>
 
         <!-- Filter Section -->
-        <div class="mb-8 flex gap-3 flex-wrap">
-            <button class="btn btn-sm btn-primary text-white rounded-xl min-h-[44px] px-6 active:scale-95 transition-transform">All Products</button>
-            <button class="btn btn-sm btn-outline rounded-xl hover:bg-blue-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
-            <button class="btn btn-sm btn-outline rounded-xl hover:bg-blue-50 min-h-[44px] px-6 active:scale-95 transition-transform" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
+        <div class="mb-12 pb-12 border-b border-gray-200 flex gap-3 flex-wrap">
+            <button class="btn btn-sm btn-primary text-white rounded-lg min-h-[44px] px-6 active:scale-95">All Products</button>
+            <button class="btn btn-sm btn-outline rounded-lg border-gray-300 min-h-[44px] px-6 active:scale-95" onclick="window.scrollTo(0, 0)">Books ({books.length})</button>
+            <button class="btn btn-sm btn-outline rounded-lg border-gray-300 min-h-[44px] px-6 active:scale-95" onclick="window.scrollTo(0, 0)">Bundles ({bundles.length})</button>
         </div>
 
         <!-- Books Grid -->
         <section class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Books</h2>
-            <p class="text-gray-600 mb-8">Thom's three books on modern project-based learning. These are the pedagogical foundation for everything we teach. Available individually or bundled with our courses.</p>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Books</h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-3xl">Thom's three books on project-based learning. These are the foundation for everything we teach. Available individually or bundled with courses.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {books.map(book => (
                     <div class="card card-hover bg-white rounded-2xl overflow-hidden shadow-sm active:scale-[0.98] transition-transform">
@@ -106,10 +106,10 @@ const breadcrumbItems = [
         )}
 
         <!-- CTA Section -->
-        <section class="py-12 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl text-center mb-8 text-white shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Want hands-on training?</h2>
-            <p class="opacity-90 mb-6">Our courses go deeper—4-7 weeks of AI + PBL skills with real student projects.</p>
-            <a href="/courses" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">Browse Courses</a>
+        <section class="py-16 border-t border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Want hands-on training?</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl">Our courses go deeper—4-7 weeks of AI + PBL skills with real student projects.</p>
+            <a href="/courses" class="btn btn-primary text-white rounded-lg px-6 py-3 no-underline font-medium min-h-[48px] active:scale-95">Browse courses</a>
         </section>
     </div>
 </Layout>

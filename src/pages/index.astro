@@ -41,52 +41,36 @@ const aiFeatures = [
 
 <Layout title="PBL Future Labs - AI-Powered Project-Based Learning for the Future of Education">
     <!-- Hero Section -->
-    <section class="py-8 sm:py-12 text-center">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">Project-based learning + AI.<br class="sm:hidden" /> <span class="block sm:inline text-gray-900">Practical frameworks for real classrooms.</span></h1>
-        <p class="text-base sm:text-lg text-gray-600 mb-4 max-w-2xl mx-auto">PBL is how students learn best. AI handles the design work that takes weeks. We give you the frameworks and tools to make both work together in your classroom.</p>
-        <p class="text-sm sm:text-base text-gray-500 mb-8 max-w-xl mx-auto">Built by educators (Phil Alcock and Thom Markham, Ph.D.) working with schools worldwide.</p>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
-            <a href="#free-guide" class="w-full sm:w-auto btn btn-primary text-white rounded-xl px-6 py-3 no-underline shadow-md hover:shadow-lg transition-all font-medium min-h-[48px] active:scale-95">Get the Free Guide</a>
-            <a href="/courses" class="w-full sm:w-auto btn btn-outline rounded-xl px-6 py-3 no-underline hover:bg-blue-50 border-gray-300 font-medium min-h-[48px] active:scale-95">Explore Courses</a>
+    <section class="py-16 sm:py-24 text-center">
+        <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">Project-based learning + AI.</h1>
+        <p class="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">PBL is how students learn best. AI handles the design work that takes weeks. We give you the frameworks and tools to make both work together.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="#free-guide" class="btn btn-primary text-white rounded-lg px-6 py-3 no-underline font-medium min-h-[48px] active:scale-95">Get the free guide</a>
+            <a href="/courses" class="btn btn-outline rounded-lg px-6 py-3 no-underline border border-gray-300 font-medium min-h-[48px] active:scale-95 hover:border-gray-400">Explore courses</a>
         </div>
     </section>
 
-    <!-- Origin Story / Why This Exists -->
-    <section class="mb-16 max-w-5xl">
-        <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 sm:p-10 border border-gray-100">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Why this matters</h2>
-            <div class="space-y-4 text-gray-700 text-base sm:text-lg max-w-3xl">
-                <p>
-                    Teachers know PBL works. Students learn more deeply when they do real projects. The problem isn't PBL—it's the design work. Creating authentic, standards-aligned projects takes time educators don't have.
-                </p>
-                <p>
-                    AI changes that math. What took weeks now takes hours. But only if you know how to use it. Most AI tools in education either ignore PBL entirely or try to replace the teacher with a chatbot.
-                </p>
-                <p>
-                    We built practical frameworks for AI inside PBL—not instead of PBL. You get concrete workflows, real examples, and training you can start using immediately.
-                </p>
-            </div>
+    <!-- Why This Matters -->
+    <section class="py-24 max-w-3xl">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Why this matters</h2>
+        <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <p>Teachers know PBL works. Students learn more deeply when they do real projects. The problem isn't PBL—it's the design work.</p>
+            <p>AI changes that math. What took weeks now takes hours. We built practical frameworks for AI inside PBL, not instead of it.</p>
         </div>
     </section>
 
-    <!-- PBL 2.0 Framework Section -->
-    <section class="mb-16 max-w-5xl">
-        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-8 sm:p-10 border border-blue-100">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">How it works</h2>
-                <p class="text-gray-700 max-w-3xl mx-auto text-base sm:text-lg">
-                    Good PBL hasn't changed. Students still need driving questions, real collaboration, and meaningful products. AI just removes friction—faster design, smarter differentiation, and continuous feedback throughout the project.
-                </p>
+    <!-- How It Works -->
+    <section class="py-24 max-w-5xl border-t border-gray-200">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">How it works</h2>
+        <p class="text-lg text-gray-600 mb-12 max-w-3xl leading-relaxed">Good PBL hasn't changed. Students still need real collaboration and meaningful products. AI removes the design friction.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Without AI</p>
+                <p class="text-lg text-gray-900">Week-long planning, static materials, assessment at the end</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <div class="bg-white/70 rounded-xl p-4 text-center">
-                    <p class="font-bold text-gray-900 mb-1">Without AI</p>
-                    <p class="text-sm text-gray-600">Week-long planning, static materials, assessment at the end</p>
-                </div>
-                <div class="bg-white/70 rounded-xl p-4 text-center border-2 border-blue-200">
-                    <p class="font-bold text-blue-700 mb-1">With AI</p>
-                    <p class="text-sm text-gray-600">Hour-long planning, personalized learning paths, continuous feedback</p>
-                </div>
+            <div>
+                <p class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-2">With AI</p>
+                <p class="text-lg text-gray-900">Hour-long planning, personalized learning paths, continuous feedback</p>
             </div>
         </div>
     </section>
@@ -107,98 +91,61 @@ const aiFeatures = [
     </section>
 
     <!-- AI Features Grid -->
-    <section class="mb-16 max-w-5xl">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-bold text-gray-900 mb-3">What AI actually does for you</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Here's what you get at each stage of a project.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="py-24 max-w-5xl border-t border-gray-200">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12">What AI does for you</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             {aiFeatures.map(feature => (
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                    <span class="text-4xl mb-4 block">{feature.icon}</span>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">{feature.title}</h3>
-                    <p class="text-gray-600 text-sm">{feature.description}</p>
+                <div class="pb-6 border-b border-gray-200 last:border-b-0">
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">{feature.title}</h3>
+                    <p class="text-gray-600 text-base">{feature.description}</p>
                 </div>
             ))}
         </div>
     </section>
 
     <!-- Who's Behind This -->
-    <section class="mb-16 max-w-5xl">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Who's Behind This</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section class="py-24 max-w-5xl border-t border-gray-200">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12">Who's behind this</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <!-- Phil -->
-            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100">
-                <div class="text-center mb-4">
-                    <div class="w-24 h-24 bg-amber-100 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">P</div>
-                    <h3 class="text-xl font-bold text-gray-900">Phil Alcock</h3>
-                    <p class="text-amber-700 font-medium">Founder, PBL Future Labs</p>
-                </div>
-                <p class="text-gray-700 text-sm mb-4">
-                    Australian educator and systems thinker based in Acapulco, Mexico. Phil brings a neurodivergent lens (ADHD/autism) to learning design — which means he sees patterns others miss and builds systems that actually work for diverse learners. He's spoken at ISTE, guest lectured at Harvard, and built a 10K+ following on LinkedIn sharing unfiltered takes on AI in education.
+            <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Phil Alcock</h3>
+                <p class="text-gray-600 text-sm mb-4">Founder</p>
+                <p class="text-gray-700 leading-relaxed">
+                    Australian educator and systems thinker based in Acapulco. Phil brings a neurodivergent lens to learning design. He's spoken at ISTE, guest lectured at Harvard, and built a 10K+ following on LinkedIn.
                 </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">ISTE Speaker</span>
-                    <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">Harvard Guest Lecturer</span>
-                    <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">Neurodivergent Advocate</span>
-                </div>
-                <div class="mt-4">
-                    <a href="https://linkedin.com/in/phillipalcock" class="text-amber-700 hover:text-amber-900 text-sm font-medium no-underline">Connect on LinkedIn (10K+ followers) &rarr;</a>
-                </div>
             </div>
 
             <!-- Thom -->
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-                <div class="text-center mb-4">
-                    <img src="/images/thom.webp" alt="Thom Markham" width="96" height="96" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg" />
-                    <h3 class="text-xl font-bold text-gray-900">Thom Markham, Ph.D.</h3>
-                    <p class="text-blue-700 font-medium">Author & PBL Expert</p>
-                </div>
-                <p class="text-gray-700 text-sm mb-4">
-                    Thom is a globally recognized leader in project-based learning with over 15 years of experience training thousands of educators. He's authored three definitive books on PBL and brings deep expertise in learning science, instructional design, and the human side of education. At PBL Future Labs, Thom brings the pedagogical foundation that makes AI integration meaningful — not just flashy.
+            <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Thom Markham, Ph.D.</h3>
+                <p class="text-gray-600 text-sm mb-4">Author & PBL Expert</p>
+                <p class="text-gray-700 leading-relaxed">
+                    Globally recognized leader in project-based learning with 15+ years training educators. Author of three books on PBL. Brings the pedagogical foundation that makes AI integration meaningful.
                 </p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Published Author (3 Books)</span>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Keynote Speaker</span>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Ph.D. Psychology</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- What Makes Us Different -->
-    <section class="mb-16 max-w-5xl">
-        <div class="bg-gray-900 text-white rounded-2xl p-8 sm:p-10">
-            <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center">Why we're different</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                <div class="flex gap-3">
-                    <span class="text-blue-400 font-bold text-lg flex-shrink-0">01</span>
-                    <div>
-                        <p class="font-semibold mb-1">We're educators, not EdTech.</p>
-                        <p class="text-gray-400 text-sm">Phil and Thom still work directly with schools. We solve problems we see every week, not hypothetical ones.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <span class="text-blue-400 font-bold text-lg flex-shrink-0">02</span>
-                    <div>
-                        <p class="font-semibold mb-1">Built for real classrooms.</p>
-                        <p class="text-gray-400 text-sm">Everything we teach is tested with real students in real schools. No theory-only content.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <span class="text-blue-400 font-bold text-lg flex-shrink-0">03</span>
-                    <div>
-                        <p class="font-semibold mb-1">We work across contexts.</p>
-                        <p class="text-gray-400 text-sm">Operating from Acapulco, Mexico gives us perspective beyond US-only education approaches. Our frameworks adapt across cultures.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <span class="text-blue-400 font-bold text-lg flex-shrink-0">04</span>
-                    <div>
-                        <p class="font-semibold mb-1">Learning is for everyone.</p>
-                        <p class="text-gray-400 text-sm">We design for all learners—informed by our own experiences with neurodiversity. Your frameworks won't exclude anyone.</p>
-                    </div>
-                </div>
+    <!-- Why We're Different -->
+    <section class="py-24 max-w-5xl border-t border-gray-200">
+        <h2 class="text-4xl font-bold text-gray-900 mb-12">Why we're different</h2>
+        <div class="space-y-10">
+            <div>
+                <p class="font-semibold text-gray-900 mb-2">We're educators, not EdTech.</p>
+                <p class="text-gray-600">Phil and Thom still work directly with schools. We solve problems we see every week.</p>
+            </div>
+            <div>
+                <p class="font-semibold text-gray-900 mb-2">Built for real classrooms.</p>
+                <p class="text-gray-600">Everything we teach is tested with real students in real schools.</p>
+            </div>
+            <div>
+                <p class="font-semibold text-gray-900 mb-2">We work across contexts.</p>
+                <p class="text-gray-600">Operating from Acapulco gives us perspective beyond US-only approaches. Our frameworks adapt across cultures.</p>
+            </div>
+            <div>
+                <p class="font-semibold text-gray-900 mb-2">Learning is for everyone.</p>
+                <p class="text-gray-600">We design for all learners—informed by our own experiences with neurodiversity.</p>
             </div>
         </div>
     </section>
@@ -254,43 +201,18 @@ const aiFeatures = [
             ))}
         </div>
     </section>
-
-    <!-- Email Capture / Lead Magnet -->
-    <section id="free-guide" class="mb-16 max-w-5xl">
-        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 sm:p-10 border border-amber-100 text-center">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Get started for free.</h2>
-            <p class="text-gray-700 max-w-2xl mx-auto mb-6 text-base sm:text-lg">The free PBL + AI Starter Guide includes 5 practical prompts you can use Monday, plus the framework explained clearly. No fluff.</p>
-            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
-                <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-xl border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent" required />
-                <button type="submit" class="btn btn-primary text-white rounded-xl px-6 py-3 font-medium min-h-[48px] active:scale-95 shadow-md">Get the Guide</button>
             </form>
-            <p class="text-xs text-gray-500">No spam, unsubscribe anytime.</p>
+            <p class="text-sm text-gray-500">No spam, unsubscribe anytime.</p>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="py-12 sm:py-16 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 rounded-2xl mb-16 max-w-5xl text-center text-white shadow-xl">
-        <div class="px-6">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4">Start using AI in your projects.</h2>
-            <p class="text-lg mb-8 opacity-90 max-w-2xl mx-auto">Practical courses, real frameworks, and books from people who actually do this work with students.</p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="/courses" class="btn btn-lg bg-white text-blue-700 hover:bg-gray-100 rounded-xl px-8 no-underline font-semibold min-h-[48px] active:scale-95 transition-transform">Courses</a>
-                <a href="/shop" class="btn btn-lg btn-outline border-white text-white hover:bg-white/20 rounded-xl px-8 no-underline min-h-[48px] active:scale-95 transition-transform">Books</a>
-            </div>
-            <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm opacity-80">
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    30-day guarantee
-                </span>
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Instant access
-                </span>
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Lifetime updates
-                </span>
-            </div>
+    <section class="py-24 max-w-5xl border-t border-gray-200">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Ready to get started?</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-3xl">Browse our courses and books. Or grab the free guide above first.</p>
+        <div class="flex flex-wrap gap-3">
+            <a href="/courses" class="btn btn-primary text-white rounded-lg px-6 py-3 no-underline font-medium min-h-[48px] active:scale-95">Courses</a>
+            <a href="/shop" class="btn btn-outline rounded-lg px-6 py-3 no-underline border border-gray-300 font-medium min-h-[48px] active:scale-95 hover:border-gray-400">Books</a>
         </div>
     </section>
 </Layout>
