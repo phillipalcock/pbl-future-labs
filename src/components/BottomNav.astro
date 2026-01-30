@@ -1,8 +1,9 @@
 ---
 const navItems = [
     { label: 'Home', href: '/', icon: 'home' },
-    { label: 'Programs', href: '/programs', icon: 'programs' },
-    { label: 'Services', href: '/services', icon: 'services' },
+    { label: 'Courses', href: '/courses', icon: 'courses' },
+    { label: 'eBooks', href: '/ebooks', icon: 'ebooks' },
+    { label: 'Coaching', href: '/coaching', icon: 'coaching' },
     { label: 'About', href: '/about', icon: 'about' }
 ];
 ---
@@ -12,7 +13,7 @@ const navItems = [
         {navItems.map((item) => (
             <a
                 href={item.href}
-                class="flex flex-col items-center justify-center flex-1 h-full min-w-[64px]"
+                class="flex flex-col items-center justify-center flex-1 h-full min-w-[48px]"
                 style="color: #6B6560; text-decoration: none; transition: color 0.2s ease;"
             >
                 {item.icon === 'home' && (
@@ -20,14 +21,19 @@ const navItems = [
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                     </svg>
                 )}
-                {item.icon === 'programs' && (
+                {item.icon === 'courses' && (
                     <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                     </svg>
                 )}
-                {item.icon === 'services' && (
+                {item.icon === 'ebooks' && (
                     <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8M9 2H15C15.5523 2 16 2.44772 16 3V5C16 5.55228 15.5523 6 15 6H9C8.44772 6 8 5.55228 8 5V3C8 2.44772 8.44772 2 9 2Z"/>
+                    </svg>
+                )}
+                {item.icon === 'coaching' && (
+                    <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                     </svg>
                 )}
                 {item.icon === 'about' && (
@@ -35,7 +41,7 @@ const navItems = [
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                 )}
-                <span style="font-family: 'Newsreader', Georgia, serif; font-size: 11px; font-weight: 400;">{item.label}</span>
+                <span style="font-family: 'Newsreader', Georgia, serif; font-size: 10px; font-weight: 400;">{item.label}</span>
             </a>
         ))}
     </div>

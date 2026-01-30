@@ -22,27 +22,71 @@ import Layout from '../layouts/Layout.astro';
 
     <div class="section-divider"></div>
 
-    <!-- The Team -->
+    <!-- The Team — Thom First -->
     <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
         <h2 class="mb-12">The team.</h2>
 
         <div class="space-y-16">
-            <!-- Phil -->
-            <div>
-                <h3 class="mb-1">Phil Alcock</h3>
-                <p class="mb-4" style="color: #6B6560; font-size: 0.9rem;">Founder, PBL Future Labs</p>
-                <p style="color: #6B6560; max-width: 520px;">Australian educator based in Acapulco, Mexico. Phil has spoken at ISTE, guest lectured at Harvard, and built a following of 10,000+ educators on LinkedIn sharing frameworks for AI in education.</p>
-                <a href="https://linkedin.com/in/phillipalcock" class="text-link-arrow inline-block mt-3">LinkedIn &rarr;</a>
+            <!-- Thom (Lead) -->
+            <div class="flex flex-col sm:flex-row gap-6 items-start">
+                <div class="w-full sm:w-40 flex-shrink-0">
+                    <div class="overflow-hidden img-skeleton" style="border-radius: 8px; aspect-ratio: 1/1;">
+                        <img
+                            src="/images/thom.webp"
+                            alt="Thom Markham, Ph.D."
+                            width="160"
+                            height="160"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                            onload="this.parentElement.classList.add('loaded')"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <h3 class="mb-1">Thom Markham, Ph.D.</h3>
+                    <p class="mb-4" style="color: #0D9488; font-size: 0.9rem;">Author & PBL Expert</p>
+                    <p style="color: #6B6560; max-width: 520px;">Author of three bestselling books on project-based learning: <em>Project-Based Learning Handbook</em>, <em>Design and Coaching Guide</em>, and <em>Redefining Smart</em>. Ph.D. in Psychology. Over 15 years training thousands of educators worldwide. Thom is the instructional designer behind every PBL Future Labs course and ensures all AI work is grounded in real learning science.</p>
+                    <a href="https://linkedin.com/in/thommarkham" class="text-link-arrow inline-block mt-3">LinkedIn &rarr;</a>
+                </div>
             </div>
 
             <div class="divider-line"></div>
 
-            <!-- Thom -->
+            <!-- Phil -->
             <div>
-                <h3 class="mb-1">Thom Markham, Ph.D.</h3>
-                <p class="mb-4" style="color: #6B6560; font-size: 0.9rem;">Author & PBL Expert</p>
-                <p style="color: #6B6560; max-width: 520px;">Author of three books on project-based learning. Ph.D. in Psychology. Over 15 years training thousands of educators worldwide. Thom ensures our AI work is grounded in real learning science.</p>
-                <a href="https://linkedin.com/in/thommarkham" class="text-link-arrow inline-block mt-3">LinkedIn &rarr;</a>
+                <h3 class="mb-1">Phil Alcock</h3>
+                <p class="mb-4" style="color: #0D9488; font-size: 0.9rem;">Founder, PBL Future Labs</p>
+                <p style="color: #6B6560; max-width: 520px;">Australian educator based in Acapulco, Mexico. Phil has spoken at ISTE, guest lectured at Harvard, and built a following of 10,000+ educators on LinkedIn sharing frameworks for AI in education. He builds the AI integration tools and practical classroom strategies used across all PBL Future Labs programs.</p>
+                <a href="https://linkedin.com/in/phillipalcock" class="text-link-arrow inline-block mt-3">LinkedIn &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Trust Badges -->
+    <section class="scroll-reveal text-center" style="padding: 2rem 0 3rem;">
+        <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
+            <div class="trust-badge">
+                <span class="trust-badge-icon">&#127891;</span>
+                <span class="trust-badge-text">Featured at ISTE</span>
+            </div>
+            <div class="trust-badge">
+                <span class="trust-badge-icon">&#127979;</span>
+                <span class="trust-badge-text">Harvard Guest Lecturer</span>
+            </div>
+            <div class="trust-badge">
+                <span class="trust-badge-icon">&#127758;</span>
+                <span class="trust-badge-text">Used Worldwide</span>
+            </div>
+            <div class="trust-badge">
+                <span class="trust-badge-icon">&#128218;</span>
+                <span class="trust-badge-text">3 Published Books</span>
+            </div>
+            <div class="trust-badge">
+                <span class="trust-badge-icon">&#128101;</span>
+                <span class="trust-badge-text">10,000+ Educators</span>
             </div>
         </div>
     </section>

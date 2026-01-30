@@ -8,6 +8,9 @@ export interface Product {
   rating: number;
   duration?: string;
   curriculum?: string[];
+  instructor?: string;
+  includes?: string[];
+  thumbnail?: string;
 }
 
 export const products: Product[] = [
@@ -15,29 +18,32 @@ export const products: Product[] = [
   {
     id: 'book-1',
     title: 'Project-Based Learning Handbook: A Guide to Standards-Focused PBL',
-    description: 'A comprehensive guide to standards-focused project-based learning for middle and high school teachers. Second edition by Thom Markham.',
+    description: 'A comprehensive guide to standards-focused project-based learning for middle and high school teachers. Second edition.',
     price: 34.99,
     category: 'book',
     image: '/images/pbl handbook.jpg',
-    rating: 4.8
+    rating: 4.8,
+    instructor: 'Thom Markham, Ph.D.'
   },
   {
     id: 'book-2',
     title: 'Project Based Learning: Design and Coaching Guide',
-    description: 'Expert tools for innovation and inquiry for K-12 educators. A practical guide by Thom Markham for designing and implementing PBL in your classroom.',
+    description: 'Expert tools for innovation and inquiry for K-12 educators. A practical guide for designing and implementing PBL in your classroom.',
     price: 39.99,
     category: 'book',
     image: '/images/design and coaching guide.jpg',
-    rating: 4.7
+    rating: 4.7,
+    instructor: 'Thom Markham, Ph.D.'
   },
   {
     id: 'book-3',
     title: 'Redefining Smart: Awakening Students\' Power to Reimagine Their World',
-    description: 'Transform education by empowering students to think critically and reimagine solutions to real-world problems. By Thom Markham.',
+    description: 'Transform education by empowering students to think critically and reimagine solutions to real-world problems.',
     price: 29.99,
     category: 'book',
     image: '/images/redefining smart.jpg',
-    rating: 4.6
+    rating: 4.6,
+    instructor: 'Thom Markham, Ph.D.'
   },
 
   // Courses
@@ -47,9 +53,12 @@ export const products: Product[] = [
     description: 'Master AI integration strategies for designing and delivering authentic project-based learning experiences.',
     price: 99.99,
     category: 'course',
-    image: '🤖',
+    image: '/images/pbl-logo.png',
     rating: 4.9,
     duration: '4 weeks',
+    instructor: 'Phil Alcock & Thom Markham, Ph.D.',
+    thumbnail: 'ai-pbl',
+    includes: ['12 video lessons', 'Downloadable templates', 'Certificate of completion', 'Community access'],
     curriculum: [
       'Week 1: AI fundamentals for educators — what works, what doesn\'t',
       'Week 2: Using AI for project design and standards alignment',
@@ -63,9 +72,12 @@ export const products: Product[] = [
     description: 'Learn frameworks for creating meaningful, real-world projects that drive student engagement and achievement.',
     price: 149.99,
     category: 'course',
-    image: '🎯',
+    image: '/images/pbl-logo.png',
     rating: 4.8,
     duration: '6 weeks',
+    instructor: 'Thom Markham, Ph.D.',
+    thumbnail: 'authentic-projects',
+    includes: ['18 video lessons', 'Project design toolkit', 'Certificate of completion', 'Peer review sessions'],
     curriculum: [
       'Week 1-2: The anatomy of an authentic project — what makes it real',
       'Week 3: Connecting projects to community partners and real audiences',
@@ -80,9 +92,12 @@ export const products: Product[] = [
     description: 'Implement adaptive learning technologies and AI tools to personalize student learning paths within projects.',
     price: 129.99,
     category: 'course',
-    image: '✨',
+    image: '/images/pbl-logo.png',
     rating: 4.7,
     duration: '5 weeks',
+    instructor: 'Phil Alcock',
+    thumbnail: 'personalized-learning',
+    includes: ['15 video lessons', 'AI tool guides', 'Certificate of completion', 'Live Q&A sessions'],
     curriculum: [
       'Week 1: Understanding personalization vs. differentiation',
       'Week 2: AI tools for identifying student strengths and gaps',
@@ -97,9 +112,12 @@ export const products: Product[] = [
     description: 'Build authentic connections with community organizations to enhance project-based learning with real-world impact.',
     price: 89.99,
     category: 'course',
-    image: '🤝',
+    image: '/images/pbl-logo.png',
     rating: 4.6,
     duration: '4 weeks',
+    instructor: 'Phil Alcock & Thom Markham, Ph.D.',
+    thumbnail: 'community-partnerships',
+    includes: ['10 video lessons', 'Partnership templates', 'Certificate of completion', 'Case studies'],
     curriculum: [
       'Week 1: Identifying and approaching community partners',
       'Week 2: Co-designing projects with external stakeholders',
@@ -113,9 +131,12 @@ export const products: Product[] = [
     description: 'Develop authentic assessment methods for evaluating project work, collaboration, and critical thinking.',
     price: 159.99,
     category: 'course',
-    image: '📊',
+    image: '/images/pbl-logo.png',
     rating: 4.9,
     duration: '7 weeks',
+    instructor: 'Thom Markham, Ph.D.',
+    thumbnail: 'assessment',
+    includes: ['21 video lessons', 'Assessment rubric library', 'Certificate of completion', 'Portfolio templates'],
     curriculum: [
       'Week 1-2: Beyond rubrics — rethinking what assessment means in PBL',
       'Week 3: Assessing collaboration and teamwork authentically',
@@ -131,9 +152,12 @@ export const products: Product[] = [
     description: 'Explore responsible AI implementation, bias detection, and ethical considerations in educational technology.',
     price: 119.99,
     category: 'course',
-    image: '⚖️',
+    image: '/images/pbl-logo.png',
     rating: 4.8,
     duration: '5 weeks',
+    instructor: 'Phil Alcock',
+    thumbnail: 'ai-ethics',
+    includes: ['15 video lessons', 'Policy templates', 'Certificate of completion', 'Ethics case studies'],
     curriculum: [
       'Week 1: The ethical landscape — what educators need to know',
       'Week 2: Bias in AI tools and how to spot it',
@@ -147,19 +171,19 @@ export const products: Product[] = [
   {
     id: 'bundle-1',
     title: 'Complete Educator Bundle',
-    description: 'Get 3 bestselling books + 2 micro-credentials. Save $120 with this comprehensive package.',
+    description: 'Get 3 bestselling books + 2 courses. Save $120 with this comprehensive package.',
     price: 449.99,
     category: 'bundle',
-    image: '📦',
+    image: '/images/pbl-logo.png',
     rating: 4.9
   },
   {
     id: 'bundle-2',
     title: 'Quick Start: Professional Growth Bundle',
-    description: '2 popular micro-credentials perfect for career advancement. Limited time offer.',
+    description: '2 popular courses perfect for career advancement. Limited time offer.',
     price: 229.99,
     category: 'bundle',
-    image: '⚡',
+    image: '/images/pbl-logo.png',
     rating: 4.8
   }
 ];
