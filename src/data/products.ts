@@ -18,7 +18,7 @@ export const products: Product[] = [
   {
     id: 'book-1',
     title: 'Project-Based Learning Handbook: A Guide to Standards-Focused PBL',
-    description: 'A comprehensive guide to standards-focused project-based learning for middle and high school teachers. Second edition.',
+    description: 'The definitive guide to standards-focused project-based learning for middle and high school teachers. Second edition.',
     price: 34.99,
     category: 'book',
     image: '/images/pbl handbook.jpg',
@@ -28,7 +28,7 @@ export const products: Product[] = [
   {
     id: 'book-2',
     title: 'Project Based Learning: Design and Coaching Guide',
-    description: 'Expert tools for innovation and inquiry for K-12 educators. A practical guide for designing and implementing PBL in your classroom.',
+    description: 'Expert tools for innovation and inquiry for K-12 educators. A step-by-step system for designing and running PBL in your classroom.',
     price: 39.99,
     category: 'book',
     image: '/images/design and coaching guide.jpg',
@@ -49,8 +49,8 @@ export const products: Product[] = [
   // Courses
   {
     id: 'course-1',
-    title: 'AI in Project-Based Learning',
-    description: 'Master AI integration strategies for designing and delivering authentic project-based learning experiences.',
+    title: 'Design Your First AI-Powered Project',
+    description: 'After this course, you will build and launch a complete AI-enhanced PBL unit — from driving question to final product — ready for your classroom.',
     price: 99.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -58,7 +58,7 @@ export const products: Product[] = [
     duration: '4 weeks',
     instructor: 'Phil Alcock & Thom Markham, Ph.D.',
     thumbnail: 'ai-pbl',
-    includes: ['12 video lessons', 'Downloadable templates', 'Certificate of completion', 'Community access'],
+    includes: ['12 video lessons', 'Downloadable templates', 'PBL Future Labs Certification', 'Community access'],
     curriculum: [
       'Week 1: AI fundamentals for educators — what works, what doesn\'t',
       'Week 2: Using AI for project design and standards alignment',
@@ -68,8 +68,8 @@ export const products: Product[] = [
   },
   {
     id: 'course-2',
-    title: 'Designing Authentic Projects',
-    description: 'Learn frameworks for creating meaningful, real-world projects that drive student engagement and achievement.',
+    title: 'Build Projects Students Actually Care About',
+    description: 'After this course, you will design real-world projects that connect students to community partners, drive deep engagement, and hold up to rigorous standards.',
     price: 149.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -77,9 +77,9 @@ export const products: Product[] = [
     duration: '6 weeks',
     instructor: 'Thom Markham, Ph.D.',
     thumbnail: 'authentic-projects',
-    includes: ['18 video lessons', 'Project design toolkit', 'Certificate of completion', 'Peer review sessions'],
+    includes: ['18 video lessons', 'Project design toolkit', 'PBL Future Labs Certification', 'Peer review sessions'],
     curriculum: [
-      'Week 1-2: The anatomy of an authentic project — what makes it real',
+      'Week 1-2: The anatomy of a great project — what makes it real',
       'Week 3: Connecting projects to community partners and real audiences',
       'Week 4: Standards alignment without killing the project',
       'Week 5: Building student agency into the design',
@@ -88,8 +88,8 @@ export const products: Product[] = [
   },
   {
     id: 'course-3',
-    title: 'AI-Powered Personalized Learning',
-    description: 'Implement adaptive learning technologies and AI tools to personalize student learning paths within projects.',
+    title: 'Personalize Learning With AI',
+    description: 'After this course, you will use AI tools to create flexible learning paths, give real-time feedback, and meet every student where they are — inside a project.',
     price: 129.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -97,7 +97,7 @@ export const products: Product[] = [
     duration: '5 weeks',
     instructor: 'Phil Alcock',
     thumbnail: 'personalized-learning',
-    includes: ['15 video lessons', 'AI tool guides', 'Certificate of completion', 'Live Q&A sessions'],
+    includes: ['15 video lessons', 'AI tool guides', 'PBL Future Labs Certification', 'Live Q&A sessions'],
     curriculum: [
       'Week 1: Understanding personalization vs. differentiation',
       'Week 2: AI tools for identifying student strengths and gaps',
@@ -108,8 +108,8 @@ export const products: Product[] = [
   },
   {
     id: 'course-4',
-    title: 'Community Partnerships & PBL',
-    description: 'Build authentic connections with community organizations to enhance project-based learning with real-world impact.',
+    title: 'Connect Students to the Real World',
+    description: 'After this course, you will build lasting partnerships with community organizations and design projects where students solve real problems for real people.',
     price: 89.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -117,7 +117,7 @@ export const products: Product[] = [
     duration: '4 weeks',
     instructor: 'Phil Alcock & Thom Markham, Ph.D.',
     thumbnail: 'community-partnerships',
-    includes: ['10 video lessons', 'Partnership templates', 'Certificate of completion', 'Case studies'],
+    includes: ['10 video lessons', 'Partnership templates', 'PBL Future Labs Certification', 'Case studies'],
     curriculum: [
       'Week 1: Identifying and approaching community partners',
       'Week 2: Co-designing projects with external stakeholders',
@@ -127,8 +127,8 @@ export const products: Product[] = [
   },
   {
     id: 'course-5',
-    title: 'Assessing 21st Century Skills',
-    description: 'Develop authentic assessment methods for evaluating project work, collaboration, and critical thinking.',
+    title: 'Assess What Actually Matters',
+    description: 'After this course, you will measure collaboration, critical thinking, and deeper learning — not just content recall — using AI-enhanced assessment systems.',
     price: 159.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -136,11 +136,11 @@ export const products: Product[] = [
     duration: '7 weeks',
     instructor: 'Thom Markham, Ph.D.',
     thumbnail: 'assessment',
-    includes: ['21 video lessons', 'Assessment rubric library', 'Certificate of completion', 'Portfolio templates'],
+    includes: ['21 video lessons', 'Assessment rubric library', 'PBL Future Labs Certification', 'Portfolio templates'],
     curriculum: [
       'Week 1-2: Beyond rubrics — rethinking what assessment means in PBL',
-      'Week 3: Assessing collaboration and teamwork authentically',
-      'Week 4: Critical thinking assessment frameworks',
+      'Week 3: Assessing collaboration and teamwork',
+      'Week 4: Critical thinking assessment methods',
       'Week 5: Student self-assessment and reflection tools',
       'Week 6: Using AI for continuous formative assessment',
       'Week 7: Building a portfolio-based assessment system'
@@ -148,8 +148,8 @@ export const products: Product[] = [
   },
   {
     id: 'course-6',
-    title: 'AI Ethics in Education',
-    description: 'Explore responsible AI implementation, bias detection, and ethical considerations in educational technology.',
+    title: 'Teach Students to Think Critically About AI',
+    description: 'After this course, you will lead your school in responsible AI use — from building ethical policies to teaching students how to question the tools they use.',
     price: 119.99,
     category: 'course',
     image: '/images/pbl-logo.png',
@@ -157,7 +157,7 @@ export const products: Product[] = [
     duration: '5 weeks',
     instructor: 'Phil Alcock',
     thumbnail: 'ai-ethics',
-    includes: ['15 video lessons', 'Policy templates', 'Certificate of completion', 'Ethics case studies'],
+    includes: ['15 video lessons', 'Policy templates', 'PBL Future Labs Certification', 'Ethics case studies'],
     curriculum: [
       'Week 1: The ethical landscape — what educators need to know',
       'Week 2: Bias in AI tools and how to spot it',
@@ -180,7 +180,7 @@ export const products: Product[] = [
   {
     id: 'bundle-2',
     title: 'Quick Start: Professional Growth Bundle',
-    description: '2 popular courses perfect for career advancement. Limited time offer.',
+    description: '2 popular courses to accelerate your AI + PBL implementation. Limited time offer.',
     price: 229.99,
     category: 'bundle',
     image: '/images/pbl-logo.png',

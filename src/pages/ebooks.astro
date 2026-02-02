@@ -5,11 +5,11 @@ import { products } from '../data/products';
 const books = products.filter(p => p.category === 'book');
 ---
 
-<Layout title="eBooks by Thom Markham - PBL Future Labs">
+<Layout title="eBooks by Thom Markham — The Foundation | PBL Future Labs">
     <!-- Page Header -->
     <section class="scroll-reveal" style="padding: 4rem 0 3rem;">
-        <h1 class="mb-4">eBooks.</h1>
-        <p style="color: #6B6560; font-size: 1.1rem; max-width: 520px;">Essential project-based learning books by Thom Markham, Ph.D. — used by thousands of educators worldwide.</p>
+        <h1 class="mb-4">The books that started it all.</h1>
+        <p style="color: #6B6560; font-size: 1.1rem; max-width: 520px;">The foundational texts behind PBL Future Labs. Master the method before you add the machine.</p>
     </section>
 
     <div class="section-divider"></div>
@@ -19,14 +19,19 @@ const books = products.filter(p => p.category === 'book');
         <div class="flex flex-wrap justify-center gap-6" style="font-size: 0.85rem; color: #6B6560;">
             <span>&#9733; Bestselling PBL author</span>
             <span>&#183; 15+ years of research</span>
-            <span>&#183; Used in schools worldwide</span>
+            <span>&#183; The system behind our courses</span>
         </div>
     </section>
 
     <div class="section-divider"></div>
 
+    <!-- Framing Section -->
+    <section class="scroll-reveal" style="padding: 2rem 0 2rem;">
+        <p style="color: #6B6560; max-width: 520px; font-size: 0.95rem;">Before you can build AI-powered projects, you need to master project design. These three books by Thom Markham lay the groundwork — the thinking, the structures, the assessment systems — that make Project-Based AI Experiences possible.</p>
+    </section>
+
     <!-- Books Grid -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
+    <section class="scroll-reveal" style="padding: 1rem 0 3rem;">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {books.map(book => (
                 <div class="book-card">
@@ -84,7 +89,7 @@ const books = products.filter(p => p.category === 'book');
             <div>
                 <p style="color: #0D9488; font-weight: 500; font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">About the author</p>
                 <h2 class="mb-3">Thom Markham, Ph.D.</h2>
-                <p style="color: #6B6560; max-width: 480px;">Thom is one of the world's foremost experts on project-based learning. With a Ph.D. in Psychology and over 15 years training educators, his books have become essential reading for teachers adopting PBL in K-12 classrooms.</p>
+                <p style="color: #6B6560; max-width: 480px;">One of the world's foremost experts on project-based learning. With a Ph.D. in Psychology and over 15 years training educators, Thom's books have become required reading for teachers building real PBL programs in K-12 classrooms. His work is the foundation that PBL Future Labs is built on.</p>
                 <a href="/about" class="text-link-arrow inline-block mt-3">Learn more about Thom &rarr;</a>
             </div>
         </div>
@@ -95,10 +100,10 @@ const books = products.filter(p => p.category === 'book');
     <!-- Bundle Offer -->
     <section class="scroll-reveal text-center" style="padding: 2rem 0 3rem;">
         <div class="p-8" style="background-color: #EDE8E3; border-radius: 12px;">
-            <h2 class="mb-3">Get all three books.</h2>
-            <p class="mb-2" style="color: #6B6560; max-width: 420px; margin: 0 auto;">The complete Thom Markham PBL library. Everything you need to design, coach, and assess project-based learning.</p>
-            <p class="mb-6" style="font-size: 1.5rem; font-weight: 500; color: #1A1A1A;">$94.97 <span style="color: #6B6560; font-size: 0.9rem; font-weight: 400; text-decoration: line-through;">$104.97</span></p>
-            <a href="mailto:hello@pblfuturelabs.com?subject=Purchase: Complete Book Bundle" class="btn-primary-teal">Buy the bundle &rarr;</a>
+            <h2 class="mb-3">Get the complete library.</h2>
+            <p class="mb-2" style="color: #6B6560; max-width: 420px; margin: 0 auto;">All three books plus a bonus project template pack from Thom — the same templates used in our courses. Only available with the bundle.</p>
+            <p class="mb-6" style="font-size: 1.5rem; font-weight: 500; color: #1A1A1A;">$84.97 <span style="color: #6B6560; font-size: 0.9rem; font-weight: 400; text-decoration: line-through;">$104.97</span></p>
+            <a href="mailto:hello@pblfuturelabs.com?subject=Purchase: Complete Book Bundle + Bonus Templates" class="btn-primary-teal">Buy the bundle &rarr;</a>
         </div>
     </section>
 
@@ -107,7 +112,7 @@ const books = products.filter(p => p.category === 'book');
     <!-- Email Capture -->
     <section class="scroll-reveal text-center" style="padding: 2rem 0 4rem;">
         <h2 class="mb-4">Get a free chapter.</h2>
-        <p class="mb-6" style="color: #6B6560; max-width: 400px; margin: 0 auto;">Sign up and we'll send you a sample chapter from the PBL Handbook.</p>
+        <p class="mb-6" style="color: #6B6560; max-width: 400px; margin: 0 auto;">Sign up and we'll send you a sample chapter from the PBL Handbook — plus our AI starter guide.</p>
         <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" placeholder="Your email" class="input-pill flex-1" required />
             <button type="submit" class="btn-primary-teal">Send it</button>
