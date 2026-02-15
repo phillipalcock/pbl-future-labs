@@ -7,27 +7,31 @@ const courses = products.filter(p => p.category === 'course');
 
 <Layout title="Courses - PBL Future Labs">
     <!-- Page Header -->
-    <section class="scroll-reveal" style="padding: 4rem 0 3rem;">
-        <h1 class="mb-4">Courses.</h1>
-        <p style="color: #6B6560; font-size: 1.1rem; max-width: 520px;">Self-paced professional development for educators implementing AI in project-based learning. Designed by Thom Markham, Ph.D. and Phil Alcock.</p>
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding-top: 4rem; padding-bottom: 3rem;">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="mb-4">Courses.</h1>
+            <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 520px;">Self-paced professional development for educators implementing AI in project-based learning. Designed by Thom Markham, Ph.D. and Phil Alcock.</p>
+        </div>
     </section>
 
     <div class="section-divider"></div>
 
     <!-- Trust Indicators -->
-    <section class="scroll-reveal" style="padding: 1rem 0 2rem;">
-        <div class="flex flex-wrap justify-center gap-6 text-center" style="font-size: 0.85rem; color: #6B6560;">
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" style="color: #0D9488;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Certificate of completion</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" style="color: #0D9488;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>Self-paced, lifetime access</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" style="color: #0D9488;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                <span>30-day money-back guarantee</span>
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 1rem 0 2rem;">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-6 text-center" style="font-size: 0.85rem; color: #a0a0a0;">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" style="color: #E33D5A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>Certificate of completion</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" style="color: #E33D5A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>Self-paced, lifetime access</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" style="color: #E33D5A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                    <span>30-day money-back guarantee</span>
+                </div>
             </div>
         </div>
     </section>
@@ -35,17 +39,15 @@ const courses = products.filter(p => p.category === 'course');
     <div class="section-divider"></div>
 
     <!-- Course Cards -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
-        <div class="space-y-8">
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto space-y-8">
             {courses.map(course => (
                 <div class="course-card">
-                    <!-- Course Thumbnail -->
                     <div class="course-card-thumbnail">
                         <div class="course-thumbnail-graphic" data-course={course.thumbnail}>
                             <span style="font-size: 2rem;">{course.id === 'course-1' ? '\u{1F916}' : course.id === 'course-2' ? '\u{1F3AF}' : course.id === 'course-3' ? '\u2728' : course.id === 'course-4' ? '\u{1F91D}' : course.id === 'course-5' ? '\u{1F4CA}' : '\u2696\uFE0F'}</span>
                         </div>
                     </div>
-                    <!-- Course Info -->
                     <div class="course-card-content">
                         <div class="flex flex-wrap items-center gap-2 mb-2">
                             <span class="course-badge">{course.duration}</span>
@@ -53,16 +55,15 @@ const courses = products.filter(p => p.category === 'course');
                             <span class="course-badge credential-badge">Earn a Micro-Credential</span>
                         </div>
                         <h3 class="mb-2" style="font-size: 1.15rem;">{course.title}</h3>
-                        <p style="color: #6B6560; font-size: 0.9rem; margin-bottom: 0.5rem;">By {course.instructor}</p>
-                        <p style="color: #6B6560; font-size: 0.9rem; margin-bottom: 1rem;">{course.description}</p>
+                        <p style="color: #a0a0a0; font-size: 0.9rem; margin-bottom: 0.5rem;">By {course.instructor}</p>
+                        <p style="color: #a0a0a0; font-size: 0.9rem; margin-bottom: 1rem;">{course.description}</p>
 
-                        <!-- What's Included -->
                         {course.includes && (
                             <div class="mb-3">
-                                <div class="flex flex-wrap gap-x-4 gap-y-1" style="font-size: 0.8rem; color: #6B6560;">
+                                <div class="flex flex-wrap gap-x-4 gap-y-1" style="font-size: 0.8rem; color: #a0a0a0;">
                                     {course.includes.map(item => (
                                         <span class="flex items-center gap-1">
-                                            <svg class="w-3 h-3" style="color: #0D9488;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                            <svg class="w-3 h-3" style="color: #E33D5A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                                             {item}
                                         </span>
                                     ))}
@@ -70,11 +71,10 @@ const courses = products.filter(p => p.category === 'course');
                             </div>
                         )}
 
-                        <!-- Curriculum Preview -->
                         {course.curriculum && (
                             <details class="mb-4" style="font-size: 0.85rem;">
-                                <summary style="color: #0D9488; cursor: pointer; font-weight: 500;">View curriculum</summary>
-                                <ul class="mt-2 space-y-1" style="color: #6B6560; padding-left: 1rem;">
+                                <summary style="color: #E33D5A; cursor: pointer; font-weight: 500;">View curriculum</summary>
+                                <ul class="mt-2 space-y-1" style="color: #a0a0a0; padding-left: 1rem;">
                                     {course.curriculum.map(week => (
                                         <li style="list-style: disc;">{week}</li>
                                     ))}
@@ -82,9 +82,8 @@ const courses = products.filter(p => p.category === 'course');
                             </details>
                         )}
 
-                        <!-- Price & CTA -->
                         <div class="flex items-center gap-4">
-                            <span style="font-weight: 500; font-size: 1.2rem; color: #1A1A1A;">${course.price}</span>
+                            <span style="font-weight: 500; font-size: 1.2rem; color: #ffffff;">${course.price}</span>
                             <a href={`mailto:hello@pblfuturelabs.com?subject=Enroll: ${course.title}`} class="btn-primary-teal" style="padding: 8px 24px; font-size: 14px;">Enroll Now</a>
                         </div>
                     </div>
@@ -96,36 +95,29 @@ const courses = products.filter(p => p.category === 'course');
     <div class="section-divider"></div>
 
     <!-- Instructors -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
-        <h2 class="mb-10">Your instructors.</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div class="flex gap-4 items-start">
-                <div class="w-20 h-20 flex-shrink-0 overflow-hidden img-skeleton" style="border-radius: 50%;">
-                    <img
-                        src="/images/thom.webp"
-                        alt="Thom Markham, Ph.D."
-                        width="80"
-                        height="80"
-                        class="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        onload="this.parentElement.classList.add('loaded')"
-                    />
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="mb-10">Your instructors.</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="flex gap-4 items-start">
+                    <div class="w-20 h-20 flex-shrink-0 overflow-hidden img-skeleton" style="border-radius: 50%;">
+                        <img src="/images/thom.webp" alt="Thom Markham, Ph.D." width="80" height="80" class="w-full h-full object-cover" loading="lazy" decoding="async" onload="this.parentElement.classList.add('loaded')" />
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Thom Markham, Ph.D.</h3>
+                        <p style="color: #E33D5A; font-size: 0.8rem; margin-bottom: 0.5rem;">Author & PBL Expert</p>
+                        <p style="color: #a0a0a0; font-size: 0.85rem;">Author of three bestselling PBL books. 15+ years training educators worldwide. Instructional designer for all courses.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Thom Markham, Ph.D.</h3>
-                    <p style="color: #0D9488; font-size: 0.8rem; margin-bottom: 0.5rem;">Author & PBL Expert</p>
-                    <p style="color: #6B6560; font-size: 0.85rem;">Author of three bestselling PBL books. 15+ years training educators worldwide. Instructional designer for all courses.</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="w-20 h-20 flex-shrink-0" style="border-radius: 50%; background-color: #EDE8E3; display: flex; align-items: center; justify-content: center;">
-                    <span style="font-size: 1.5rem; color: #6B6560;">PA</span>
-                </div>
-                <div>
-                    <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Phil Alcock</h3>
-                    <p style="color: #0D9488; font-size: 0.8rem; margin-bottom: 0.5rem;">Founder, PBL Future Labs</p>
-                    <p style="color: #6B6560; font-size: 0.85rem;">ISTE speaker, Harvard guest lecturer, 10,000+ educator following. Builds the AI integration frameworks used in every course.</p>
+                <div class="flex gap-4 items-start">
+                    <div class="w-20 h-20 flex-shrink-0" style="border-radius: 50%; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
+                        <span style="font-size: 1.5rem; color: #a0a0a0;">PA</span>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.25rem;">Phil Alcock</h3>
+                        <p style="color: #E33D5A; font-size: 0.8rem; margin-bottom: 0.5rem;">Founder, PBL Future Labs</p>
+                        <p style="color: #a0a0a0; font-size: 0.85rem;">ISTE speaker, Harvard guest lecturer, 10,000+ educator following. Builds the AI integration frameworks used in every course.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,42 +126,44 @@ const courses = products.filter(p => p.category === 'course');
     <div class="section-divider"></div>
 
     <!-- FAQ -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
-        <h2 class="mb-12">Questions.</h2>
-        <div class="space-y-10">
-            <div>
-                <h3 class="mb-2">Do I need prerequisites?</h3>
-                <p style="color: #6B6560;">General teaching experience is helpful but not required. No prior AI expertise needed — we start from the basics.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">How long do I have access?</h3>
-                <p style="color: #6B6560;">Lifetime access. Complete at your own pace, revisit materials anytime, and get all future updates included.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">Do I earn a micro-credential?</h3>
-                <p style="color: #6B6560;">Yes. Each course includes a PBL Future Labs Micro-Credential upon completion. These are recognized certificates that document your professional development hours — ideal for PD portfolios and career advancement.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">How many PD hours do I earn?</h3>
-                <p style="color: #6B6560;">Each course provides documented professional development hours matching its duration (e.g., a 4-week course provides approximately 12-16 PD hours). Exact hours are listed on each course page.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">What are the technical requirements?</h3>
-                <p style="color: #6B6560;">A modern web browser and internet connection. All courses are hosted on our learning platform and accessible on desktop, tablet, or mobile. No special software needed.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">What's the refund policy?</h3>
-                <p style="color: #6B6560;">30-day, no-questions-asked money-back guarantee on all courses.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <h3 class="mb-2">Team pricing?</h3>
-                <p style="color: #6B6560;">Email us at <a href="mailto:hello@pblfuturelabs.com" class="text-link-arrow">hello@pblfuturelabs.com</a> for district and school team pricing.</p>
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="mb-12">Questions.</h2>
+            <div class="space-y-10">
+                <div>
+                    <h3 class="mb-2">Do I need prerequisites?</h3>
+                    <p style="color: #a0a0a0;">General teaching experience is helpful but not required. No prior AI expertise needed — we start from the basics.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">How long do I have access?</h3>
+                    <p style="color: #a0a0a0;">Lifetime access. Complete at your own pace, revisit materials anytime, and get all future updates included.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">Do I earn a micro-credential?</h3>
+                    <p style="color: #a0a0a0;">Yes. Each course includes a PBL Future Labs Micro-Credential upon completion. These are recognized certificates that document your professional development hours — ideal for PD portfolios and career advancement.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">How many PD hours do I earn?</h3>
+                    <p style="color: #a0a0a0;">Each course provides documented professional development hours matching its duration (e.g., a 4-week course provides approximately 12-16 PD hours). Exact hours are listed on each course page.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">What are the technical requirements?</h3>
+                    <p style="color: #a0a0a0;">A modern web browser and internet connection. All courses are hosted on our learning platform and accessible on desktop, tablet, or mobile. No special software needed.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">What's the refund policy?</h3>
+                    <p style="color: #a0a0a0;">30-day, no-questions-asked money-back guarantee on all courses.</p>
+                </div>
+                <div class="divider-line"></div>
+                <div>
+                    <h3 class="mb-2">Team pricing?</h3>
+                    <p style="color: #a0a0a0;">Email us at <a href="mailto:hello@pblfuturelabs.com" class="text-link-arrow">hello@pblfuturelabs.com</a> for district and school team pricing.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -177,12 +171,14 @@ const courses = products.filter(p => p.category === 'course');
     <div class="section-divider"></div>
 
     <!-- Email Capture -->
-    <section class="scroll-reveal text-center" style="padding: 2rem 0 4rem;">
-        <h2 class="mb-4">Not ready to enroll?</h2>
-        <p class="mb-6" style="color: #6B6560; max-width: 400px; margin: 0 auto;">Get the free PBL + AI starter guide and see what our teaching approach looks like.</p>
-        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="email" placeholder="Your email" class="input-pill flex-1" required />
-            <button type="submit" class="btn-primary-teal">Get the guide</button>
-        </form>
+    <section class="scroll-reveal text-center px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 4rem;">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="mb-4">Not ready to enroll?</h2>
+            <p class="mb-6" style="color: #a0a0a0; max-width: 400px; margin: 0 auto;">Get the free PBL + AI starter guide and see what our teaching approach looks like.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email" class="input-pill flex-1" required />
+                <button type="submit" class="btn-primary-teal">Get the guide</button>
+            </form>
+        </div>
     </section>
 </Layout>
