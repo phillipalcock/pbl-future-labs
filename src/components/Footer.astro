@@ -2,63 +2,65 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="pt-16 pb-8 mt-24" style="border-top: 1px solid #D4CFC9;">
-    <!-- Newsletter Signup -->
-    <div class="mb-12 pb-12" style="border-bottom: 1px solid #D4CFC9;">
-        <h3 class="mb-3" style="font-size: 1.25rem;">Stay in the loop.</h3>
-        <p class="mb-6" style="color: #6B6560; font-size: 0.95rem; max-width: 400px;">Get practical PBL + AI strategies, new course announcements, and free resources.</p>
-        <form class="flex flex-col sm:flex-row gap-3 max-w-md">
-            <input type="email" placeholder="Your email" class="input-pill flex-1" required />
-            <button type="submit" class="btn-primary-teal">Subscribe</button>
-        </form>
-    </div>
+<footer class="pt-16 pb-8 mt-0 px-4 sm:px-6 lg:px-8" style="background-color: #0a0a0a; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+    <div class="max-w-7xl mx-auto">
+        <!-- Newsletter Signup -->
+        <div class="mb-12 pb-12" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <h3 class="mb-3" style="font-size: 1.25rem; color: #ffffff;">Stay in the loop.</h3>
+            <p class="mb-6" style="color: #a0a0a0; font-size: 0.95rem; max-width: 400px;">Get practical PBL + AI strategies, new course announcements, and free resources.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md">
+                <input type="email" placeholder="Your email" class="input-pill flex-1" required />
+                <button type="submit" class="btn-primary-teal">Subscribe</button>
+            </form>
+        </div>
 
-    <!-- Footer Links Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
-        <div>
-            <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 500; color: #1A1A1A;">Learn</h4>
-            <ul class="space-y-2" style="font-family: 'Newsreader', Georgia, serif; font-size: 0.875rem; color: #6B6560;">
-                <li><a href="/courses" style="text-decoration: none; transition: color 0.2s ease;">Courses</a></li>
-                <li><a href="/ebooks" style="text-decoration: none; transition: color 0.2s ease;">eBooks</a></li>
-                <li><a href="/coaching" style="text-decoration: none; transition: color 0.2s ease;">Coaching</a></li>
-            </ul>
+        <!-- Footer Links Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif;">Learn</h4>
+                <ul class="space-y-3" style="font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                    <li><a href="/courses" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">Courses</a></li>
+                    <li><a href="/ebooks" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">eBooks</a></li>
+                    <li><a href="/coaching" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">Coaching</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif;">Company</h4>
+                <ul class="space-y-3" style="font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                    <li><a href="/about" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">About</a></li>
+                    <li><a href="/services" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">School Services</a></li>
+                    <li><a href="mailto:hello@pblfuturelabs.com" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif;">Legal</h4>
+                <ul class="space-y-3" style="font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                    <li><a href="/privacy" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">Privacy</a></li>
+                    <li><a href="/terms" style="text-decoration: none; color: #6b6b6b; transition: color 0.2s ease;">Terms</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 600; color: #ffffff; font-family: 'Inter', sans-serif;">Connect</h4>
+                <ul class="space-y-3" style="font-family: 'Inter', sans-serif; font-size: 0.875rem;">
+                    <li><a href="https://linkedin.com/in/phillipalcock" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6b6b6b;">LinkedIn (Phil)</a></li>
+                    <li><a href="https://linkedin.com/in/thommarkham" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6b6b6b;">LinkedIn (Thom)</a></li>
+                    <li><a href="mailto:hello@pblfuturelabs.com" style="text-decoration: none; color: #6b6b6b;">hello@pblfuturelabs.com</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 500; color: #1A1A1A;">Company</h4>
-            <ul class="space-y-2" style="font-family: 'Newsreader', Georgia, serif; font-size: 0.875rem; color: #6B6560;">
-                <li><a href="/about" style="text-decoration: none; transition: color 0.2s ease;">About</a></li>
-                <li><a href="/services" style="text-decoration: none; transition: color 0.2s ease;">School Services</a></li>
-                <li><a href="mailto:hello@pblfuturelabs.com" style="text-decoration: none; transition: color 0.2s ease;">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 500; color: #1A1A1A;">Legal</h4>
-            <ul class="space-y-2" style="font-family: 'Newsreader', Georgia, serif; font-size: 0.875rem; color: #6B6560;">
-                <li><a href="/privacy" style="text-decoration: none; transition: color 0.2s ease;">Privacy</a></li>
-                <li><a href="/terms" style="text-decoration: none; transition: color 0.2s ease;">Terms</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="mb-4" style="font-size: 0.875rem; font-weight: 500; color: #1A1A1A;">Connect</h4>
-            <ul class="space-y-2" style="font-family: 'Newsreader', Georgia, serif; font-size: 0.875rem; color: #6B6560;">
-                <li><a href="https://linkedin.com/in/phillipalcock" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">LinkedIn (Phil)</a></li>
-                <li><a href="https://linkedin.com/in/thommarkham" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">LinkedIn (Thom)</a></li>
-                <li><a href="mailto:hello@pblfuturelabs.com" style="text-decoration: none;">hello@pblfuturelabs.com</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style="border-top: 1px solid #D4CFC9; padding-top: 1.5rem;">
-        <div>
-            <span style="font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 1rem; color: #1A1A1A;">
-                PBL Future Labs
-            </span>
-            <p class="text-sm mt-1" style="color: #6B6560; font-size: 0.8rem;">
-                Founded by Thom Markham, Ph.D. &amp; Phil Alcock
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.5rem;">
+            <div>
+                <span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1rem; color: #ffffff;">
+                    PBL Future Labs
+                </span>
+                <p class="text-sm mt-1" style="color: #6b6b6b; font-size: 0.8rem; font-family: 'Inter', sans-serif;">
+                    Founded by Thom Markham, Ph.D. &amp; Phil Alcock
+                </p>
+            </div>
+            <p class="text-sm" style="color: #6b6b6b; font-family: 'Inter', sans-serif;">
+                &copy; {currentYear} PBL Future Labs. All rights reserved.
             </p>
         </div>
-        <p class="text-sm" style="color: #6B6560;">
-            &copy; {currentYear} PBL Future Labs. All rights reserved.
-        </p>
     </div>
 </footer>

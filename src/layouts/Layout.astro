@@ -19,29 +19,27 @@ const { title } = Astro.props;
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#F5F0EB" />
+        <meta name="theme-color" content="#0a0a0a" />
         <meta name="generator" content={Astro.generator} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </head>
     <body>
-        <div class="flex flex-col min-h-screen px-4 sm:px-8 lg:px-12 safe-area-inset">
-            <div class="flex flex-col w-full max-w-reading mx-auto grow pb-20 sm:pb-0">
-                <Header />
-                <main class="grow animate-fade-in"><slot /></main>
-                <Footer />
-            </div>
+        <div class="flex flex-col min-h-screen safe-area-inset">
+            <Header />
+            <main class="grow animate-fade-in"><slot /></main>
+            <Footer />
         </div>
         <BottomNav />
 
         <!-- Pull-to-refresh indicator -->
         <div id="pull-indicator" class="pull-indicator" style="transform: translateY(-60px); opacity: 0;">
-            <div class="rounded-full shadow-lg p-3 mt-2" style="background: #F5F0EB;">
-                <svg id="pull-spinner" class="w-6 h-6" style="color: #0D9488;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="rounded-full shadow-lg p-3 mt-2" style="background: #1a1a1a;">
+                <svg id="pull-spinner" class="w-6 h-6" style="color: #E33D5A;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                 </svg>
             </div>

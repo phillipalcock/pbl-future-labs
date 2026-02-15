@@ -6,16 +6,20 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-bg': '#F5F0EB',
-                'brand-bg-alt': '#EDE8E3',
-                'brand-text': '#1A1A1A',
-                'brand-teal': '#0D9488',
-                'brand-teal-hover': '#0F766E',
-                'brand-divider': '#D4CFC9',
-                'brand-muted': '#6B6560',
+                'brand-bg': '#0a0a0a',
+                'brand-bg-alt': '#1a1a1a',
+                'brand-surface': '#1a1a1a',
+                'brand-surface-hover': '#2a2a2a',
+                'brand-text': '#ffffff',
+                'brand-text-secondary': '#a0a0a0',
+                'brand-accent': '#E33D5A',
+                'brand-accent-hover': '#c42f49',
+                'brand-divider': 'rgba(255, 255, 255, 0.1)',
+                'brand-muted': '#a0a0a0',
             },
             fontFamily: {
-                serif: ['Newsreader', ...defaultTheme.fontFamily.serif],
+                sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                display: ['Playfair Display', ...defaultTheme.fontFamily.serif],
             },
             lineHeight: {
                 'relaxed-body': '1.7'
@@ -23,6 +27,7 @@ export default {
             maxWidth: {
                 'reading': '680px',
                 'hero': '900px',
+                'site': '1280px',
             },
             animation: {
                 'fade-in': 'fadeIn 0.3s ease-out',

@@ -7,16 +7,18 @@ const books = products.filter(p => p.category === 'book');
 
 <Layout title="eBooks by Thom Markham - PBL Future Labs">
     <!-- Page Header -->
-    <section class="scroll-reveal" style="padding: 4rem 0 3rem;">
-        <h1 class="mb-4">eBooks.</h1>
-        <p style="color: #6B6560; font-size: 1.1rem; max-width: 520px;">Essential project-based learning books by Thom Markham, Ph.D. — used by thousands of educators worldwide.</p>
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 4rem 0 3rem;">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="mb-4">eBooks.</h1>
+            <p style="color: #a0a0a0; font-size: 1.1rem; max-width: 520px;">Essential project-based learning books by Thom Markham, Ph.D. — used by thousands of educators worldwide.</p>
+        </div>
     </section>
 
     <div class="section-divider"></div>
 
     <!-- Trust Bar -->
-    <section class="scroll-reveal text-center" style="padding: 1rem 0 2rem;">
-        <div class="flex flex-wrap justify-center gap-6" style="font-size: 0.85rem; color: #6B6560;">
+    <section class="scroll-reveal text-center px-4 sm:px-6" style="padding: 1rem 0 2rem;">
+        <div class="flex flex-wrap justify-center gap-6" style="font-size: 0.85rem; color: #a0a0a0;">
             <span>&#9733; Bestselling PBL author</span>
             <span>&#183; 15+ years of research</span>
             <span>&#183; Used in schools worldwide</span>
@@ -26,34 +28,25 @@ const books = products.filter(p => p.category === 'book');
     <div class="section-divider"></div>
 
     <!-- Books Grid -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
             {books.map(book => (
                 <div class="book-card">
                     <div class="book-card-image">
                         <div class="aspect-[3/4] overflow-hidden img-skeleton" style="border-radius: 6px;">
-                            <img
-                                src={book.image}
-                                alt={book.title}
-                                width="300"
-                                height="400"
-                                class="w-full h-full object-cover"
-                                loading="lazy"
-                                decoding="async"
-                                onload="this.parentElement.classList.add('loaded')"
-                            />
+                            <img src={book.image} alt={book.title} width="300" height="400" class="w-full h-full object-cover" loading="lazy" decoding="async" onload="this.parentElement.classList.add('loaded')" />
                         </div>
                     </div>
                     <div class="book-card-info">
-                        <p style="color: #0D9488; font-weight: 500; font-size: 0.8rem; margin-bottom: 0.5rem;">By {book.instructor}</p>
+                        <p style="color: #E33D5A; font-weight: 500; font-size: 0.8rem; margin-bottom: 0.5rem;">By {book.instructor}</p>
                         <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.3;">{book.title}</h3>
-                        <p style="color: #6B6560; font-size: 0.9rem; margin-bottom: 0.75rem;">{book.description}</p>
+                        <p style="color: #a0a0a0; font-size: 0.9rem; margin-bottom: 0.75rem;">{book.description}</p>
                         <div class="flex items-center gap-2 mb-3">
-                            <span style="color: #B45309; font-size: 0.8rem;">{'&#9733;'.repeat(Math.floor(book.rating))}</span>
-                            <span style="color: #6B6560; font-size: 0.8rem;">{book.rating}/5</span>
+                            <span style="color: #E33D5A; font-size: 0.8rem;">{'&#9733;'.repeat(Math.floor(book.rating))}</span>
+                            <span style="color: #a0a0a0; font-size: 0.8rem;">{book.rating}/5</span>
                         </div>
                         <div class="flex items-center justify-between">
-                            <span style="font-weight: 500; font-size: 1.1rem; color: #1A1A1A;">${book.price}</span>
+                            <span style="font-weight: 500; font-size: 1.1rem; color: #ffffff;">${book.price}</span>
                             <a href={`mailto:hello@pblfuturelabs.com?subject=Purchase: ${book.title}`} class="btn-primary-teal" style="padding: 8px 20px; font-size: 14px;">Buy Now</a>
                         </div>
                     </div>
@@ -65,26 +58,17 @@ const books = products.filter(p => p.category === 'book');
     <div class="section-divider"></div>
 
     <!-- About the Author -->
-    <section class="scroll-reveal" style="padding: 2rem 0 3rem;">
-        <div class="flex flex-col sm:flex-row gap-8 items-start">
+    <section class="scroll-reveal px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row gap-8 items-start">
             <div class="w-full sm:w-40 flex-shrink-0">
                 <div class="overflow-hidden img-skeleton" style="border-radius: 8px; aspect-ratio: 1/1;">
-                    <img
-                        src="/images/thom.webp"
-                        alt="Thom Markham, Ph.D."
-                        width="160"
-                        height="160"
-                        class="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                        onload="this.parentElement.classList.add('loaded')"
-                    />
+                    <img src="/images/thom.webp" alt="Thom Markham, Ph.D." width="160" height="160" class="w-full h-full object-cover" loading="lazy" decoding="async" onload="this.parentElement.classList.add('loaded')" />
                 </div>
             </div>
             <div>
-                <p style="color: #0D9488; font-weight: 500; font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">About the author</p>
+                <p style="color: #E33D5A; font-weight: 500; font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">About the author</p>
                 <h2 class="mb-3">Thom Markham, Ph.D.</h2>
-                <p style="color: #6B6560; max-width: 480px;">Thom is one of the world's foremost experts on project-based learning. With a Ph.D. in Psychology and over 15 years training educators, his books have become essential reading for teachers adopting PBL in K-12 classrooms.</p>
+                <p style="color: #a0a0a0; max-width: 480px;">Thom is one of the world's foremost experts on project-based learning. With a Ph.D. in Psychology and over 15 years training educators, his books have become essential reading for teachers adopting PBL in K-12 classrooms.</p>
                 <a href="/about" class="text-link-arrow inline-block mt-3">Learn more about Thom &rarr;</a>
             </div>
         </div>
@@ -93,24 +77,28 @@ const books = products.filter(p => p.category === 'book');
     <div class="section-divider"></div>
 
     <!-- Bundle Offer -->
-    <section class="scroll-reveal text-center" style="padding: 2rem 0 3rem;">
-        <div class="p-8" style="background-color: #EDE8E3; border-radius: 12px;">
-            <h2 class="mb-3">Get all three books.</h2>
-            <p class="mb-2" style="color: #6B6560; max-width: 420px; margin: 0 auto;">The complete Thom Markham PBL library. Everything you need to design, coach, and assess project-based learning.</p>
-            <p class="mb-6" style="font-size: 1.5rem; font-weight: 500; color: #1A1A1A;">$94.97 <span style="color: #6B6560; font-size: 0.9rem; font-weight: 400; text-decoration: line-through;">$104.97</span></p>
-            <a href="mailto:hello@pblfuturelabs.com?subject=Purchase: Complete Book Bundle" class="btn-primary-teal">Buy the bundle &rarr;</a>
+    <section class="scroll-reveal text-center px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 3rem;">
+        <div class="max-w-4xl mx-auto">
+            <div class="p-8 rounded-2xl" style="background-color: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);">
+                <h2 class="mb-3">Get all three books.</h2>
+                <p class="mb-2" style="color: #a0a0a0; max-width: 420px; margin: 0 auto;">The complete Thom Markham PBL library. Everything you need to design, coach, and assess project-based learning.</p>
+                <p class="mb-6" style="font-size: 1.5rem; font-weight: 500; color: #ffffff;">$94.97 <span style="color: #6b6b6b; font-size: 0.9rem; font-weight: 400; text-decoration: line-through;">$104.97</span></p>
+                <a href="mailto:hello@pblfuturelabs.com?subject=Purchase: Complete Book Bundle" class="btn-primary-teal">Buy the bundle &rarr;</a>
+            </div>
         </div>
     </section>
 
     <div class="section-divider"></div>
 
     <!-- Email Capture -->
-    <section class="scroll-reveal text-center" style="padding: 2rem 0 4rem;">
-        <h2 class="mb-4">Get a free chapter.</h2>
-        <p class="mb-6" style="color: #6B6560; max-width: 400px; margin: 0 auto;">Sign up and we'll send you a sample chapter from the PBL Handbook.</p>
-        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="email" placeholder="Your email" class="input-pill flex-1" required />
-            <button type="submit" class="btn-primary-teal">Send it</button>
-        </form>
+    <section class="scroll-reveal text-center px-4 sm:px-6 lg:px-8" style="padding: 2rem 0 4rem;">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="mb-4">Get a free chapter.</h2>
+            <p class="mb-6" style="color: #a0a0a0; max-width: 400px; margin: 0 auto;">Sign up and we'll send you a sample chapter from the PBL Handbook.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email" class="input-pill flex-1" required />
+                <button type="submit" class="btn-primary-teal">Send it</button>
+            </form>
+        </div>
     </section>
 </Layout>

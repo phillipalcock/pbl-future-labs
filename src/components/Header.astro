@@ -2,50 +2,56 @@
 const navItems = [
     { linkText: 'Courses', href: '/courses' },
     { linkText: 'Coaching', href: '/coaching' },
-    { linkText: 'EBooks', href: '/ebooks' },
+    { linkText: 'eBooks', href: '/ebooks' },
     { linkText: 'About', href: '/about' },
-    { linkText: 'Meet the Founders', href: '/about' }
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
 <!-- Announcement Bar -->
-<div class="announcement-bar text-center py-2 px-4" style="background-color: #0D9488; color: #ffffff; font-size: 13px; font-family: 'Newsreader', Georgia, serif; margin: 0 -16px; width: calc(100% + 32px);">
-    New courses launching soon — <a href="/courses" style="color: #ffffff; text-decoration: underline; font-weight: 500;">explore the catalog</a>
+<div class="text-center py-2.5 px-4" style="background-color: #1a1a1a; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <p style="color: #a0a0a0; font-size: 13px; font-family: 'Inter', sans-serif; margin: 0;">
+        New courses launching soon —
+        <a href="/courses" style="color: #E33D5A; text-decoration: none; font-weight: 600;">explore the catalog &rarr;</a>
+    </p>
 </div>
 
-<nav class="sticky top-0 z-50 py-4 sm:py-5 safe-top" style="background-color: #F5F0EB;">
-    <div class="flex items-center justify-between gap-4">
-        <!-- Wordmark Logo with Founders -->
+<nav class="fixed top-0 left-0 right-0 z-50 safe-top" style="background-color: rgba(10, 10, 10, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <!-- Wordmark Logo -->
         <a href="/" class="flex-shrink-0" style="text-decoration: none;">
-            <span style="font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 1.1rem; color: #1A1A1A; letter-spacing: -0.01em; display: block;">
+            <span style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.2rem; color: #ffffff; letter-spacing: -0.02em; display: block;">
                 PBL Future Labs
-            </span>
-            <span style="font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 0.7rem; color: #6B6560; letter-spacing: 0.02em; display: block; margin-top: -2px;">
-                By Thom Markham, Ph.D. &amp; Phil Alcock
             </span>
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden sm:flex items-center gap-1">
+        <div class="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
                 <a
                     href={item.href}
                     class="inline-flex items-center px-4 py-2 text-sm min-h-[44px]"
-                    style={`font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 14px; letter-spacing: 0.02em; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === item.href ? '#0D9488' : '#1A1A1A'};`}
+                    style={`font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: 0.01em; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === item.href ? '#E33D5A' : '#a0a0a0'};`}
                 >
                     {item.linkText}
                 </a>
             ))}
         </div>
 
+        <!-- Desktop CTA -->
+        <div class="hidden md:flex items-center gap-4">
+            <a href="#free-guide" class="text-sm" style="font-family: 'Inter', sans-serif; font-weight: 600; color: #ffffff; background-color: #E33D5A; padding: 8px 20px; border-radius: 9999px; text-decoration: none; transition: background-color 0.2s ease;">
+                Get Started
+            </a>
+        </div>
+
         <!-- Mobile: Hamburger -->
-        <div class="flex items-center gap-2 sm:hidden">
+        <div class="flex items-center gap-2 md:hidden">
             <button
                 id="mobile-menu-button"
                 class="p-3 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                style="color: #1A1A1A;"
+                style="color: #ffffff;"
                 aria-label="Toggle mobile menu"
                 aria-expanded="false"
             >
@@ -60,14 +66,14 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="sm:hidden overflow-hidden transition-all duration-300 ease-out" style="max-height: 0; opacity: 0;">
-        <div class="divider-line mt-4"></div>
-        <ul class="flex flex-col gap-1 pt-4 pb-2">
+    <div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-out" style="max-height: 0; opacity: 0; background-color: rgba(10, 10, 10, 0.98);">
+        <div class="divider-line"></div>
+        <ul class="flex flex-col gap-0 px-4 py-2">
             <li>
                 <a
                     href="/"
                     class="block px-4 py-4 min-h-[48px]"
-                    style={`font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 16px; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === '/' ? '#0D9488' : '#1A1A1A'};`}
+                    style={`font-family: 'Inter', sans-serif; font-weight: 500; font-size: 16px; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === '/' ? '#E33D5A' : '#a0a0a0'};`}
                 >
                     Home
                 </a>
@@ -77,15 +83,23 @@ const currentPath = Astro.url.pathname;
                     <a
                         href={item.href}
                         class="block px-4 py-4 min-h-[48px]"
-                        style={`font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 16px; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === item.href ? '#0D9488' : '#1A1A1A'};`}
+                        style={`font-family: 'Inter', sans-serif; font-weight: 500; font-size: 16px; text-decoration: none; transition: color 0.2s ease; color: ${currentPath === item.href ? '#E33D5A' : '#a0a0a0'};`}
                     >
                         {item.linkText}
                     </a>
                 </li>
             ))}
+            <li class="px-4 py-4">
+                <a href="#free-guide" style="font-family: 'Inter', sans-serif; font-weight: 600; color: #ffffff; background-color: #E33D5A; padding: 12px 24px; border-radius: 9999px; text-decoration: none; display: inline-block;">
+                    Get Started
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
+
+<!-- Spacer for fixed nav -->
+<div class="h-16"></div>
 
 <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');

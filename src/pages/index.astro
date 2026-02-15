@@ -1,166 +1,384 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { products } from '../data/products';
+
+const courses = products.filter(p => p.category === 'course');
+const books = products.filter(p => p.category === 'book');
+
+const testimonials = [
+    {
+        id: 1,
+        quote: "This framework completely changed how I approach project design. The AI tools saved me hours every week, and my students are more engaged than ever.",
+        name: "Sarah Chen",
+        role: "Middle School Teacher, California"
+    },
+    {
+        id: 2,
+        quote: "Finally, PBL that actually works with AI instead of fighting against it. My students are producing work I never thought possible.",
+        name: "Marcus Williams",
+        role: "High School STEM Lead, Texas"
+    },
+    {
+        id: 3,
+        quote: "The coaching sessions with Thom and Phil transformed our entire school's approach to project-based learning. Worth every penny.",
+        name: "Dr. Lisa Park",
+        role: "Principal, International School, Singapore"
+    },
+    {
+        id: 4,
+        quote: "I went from skeptic to evangelist in one course. The practical frameworks are immediately usable in any classroom.",
+        name: "James Rivera",
+        role: "Elementary Teacher, New York"
+    }
+];
+
+const categories = ['All', 'AI + PBL', 'Project Design', 'Assessment', 'Coaching', 'K-5', '6-12'];
+
+const courseGradients = [
+    'linear-gradient(135deg, #E33D5A 0%, #8B1A2B 100%)',
+    'linear-gradient(135deg, #7C3AED 0%, #4C1D95 100%)',
+    'linear-gradient(135deg, #2563EB 0%, #1E3A5F 100%)',
+    'linear-gradient(135deg, #059669 0%, #064E3B 100%)',
+    'linear-gradient(135deg, #D97706 0%, #78350F 100%)',
+    'linear-gradient(135deg, #DC2626 0%, #7F1D1D 100%)',
+];
 ---
 
-<Layout title="PBL Future Labs - AI Frameworks for Real Classrooms">
-    <!-- Hero Section -->
-    <section class="flex flex-col justify-center items-center text-center" style="min-height: 80vh; padding: 16vh 0;">
-        <div class="max-w-hero mx-auto scroll-reveal">
-            <p class="mb-4" style="color: #0D9488; font-weight: 500; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase;">PBL Future Labs</p>
-            <h1 class="mb-6" style="font-size: clamp(2rem, 5vw, 3.25rem);">Human Centered, AI-Driven PBL for Today's Learners</h1>
-            <p class="mb-10 mx-auto" style="max-width: 540px; color: #6B6560; font-size: 1.1rem;">Courses, books, and coaching for educators, home schools, and diverse students across the globe.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/courses" class="btn-primary-teal">Explore courses &rarr;</a>
-                <a href="/ebooks" class="btn-outline-teal">Browse eBooks</a>
-            </div>
+<Layout title="PBL Future Labs — Learn from the Best. Teach Your Best.">
+
+    <!-- ============================== -->
+    <!-- HERO SECTION — Cinematic -->
+    <!-- ============================== -->
+    <section class="relative flex items-center justify-center overflow-hidden" style="min-height: 90vh;">
+        <!-- Background gradient (placeholder for hero image) -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 20%, rgba(227, 61, 90, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%), #0a0a0a;"></div>
+            <div class="absolute inset-0" style="background: url('/images/thom.webp') center/cover no-repeat; opacity: 0.08;"></div>
+            <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.95) 100%);"></div>
         </div>
-    </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Founder Feature — Thom Markham -->
-    <section class="scroll-reveal" style="padding: 2rem 0 4rem;">
-        <div class="flex flex-col sm:flex-row gap-8 items-start">
-            <div class="w-full sm:w-48 flex-shrink-0">
-                <div class="overflow-hidden img-skeleton" style="border-radius: 8px; aspect-ratio: 1/1;">
-                    <img
-                        src="/images/thom.webp"
-                        alt="Thom Markham, Ph.D."
-                        width="192"
-                        height="192"
-                        class="w-full h-full object-cover"
-                        loading="eager"
-                        decoding="async"
-                        onload="this.parentElement.classList.add('loaded')"
-                    />
-                </div>
-            </div>
-            <div>
-                <p style="color: #0D9488; font-weight: 500; font-size: 0.875rem; margin-bottom: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Meet the expert</p>
-                <h2 class="mb-3">Thom Markham, Ph.D.</h2>
-                <p class="mb-4" style="color: #6B6560; font-style: italic; font-size: 1.05rem;">"AI doesn't replace great teaching — it amplifies it. The future of PBL is here, and it's more human than ever."</p>
-                <p class="mb-4" style="color: #6B6560;">Author of <em>Project-Based Learning Handbook</em>, <em>Design and Coaching Guide</em>, and <em>Redefining Smart</em>. Ph.D. in Psychology. Over 15 years training thousands of educators worldwide.</p>
-                <div class="flex flex-wrap gap-3">
-                    <a href="/ebooks" class="text-link-arrow">Browse his books &rarr;</a>
+        <div class="relative z-10 text-center max-w-4xl px-4 sm:px-6 py-20">
+            <div class="scroll-reveal">
+                <p class="mb-6" style="color: #E33D5A; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'Inter', sans-serif;">PBL Future Labs</p>
+                <h1 class="mb-6" style="font-family: 'Playfair Display', serif;">
+                    Learn from the Best.<br/>Teach Your Best.
+                </h1>
+                <p class="mb-10 mx-auto" style="max-width: 600px; color: #a0a0a0; font-size: 1.15rem; line-height: 1.7; font-family: 'Inter', sans-serif;">
+                    Get unlimited access to courses, frameworks, and coaching from world-class PBL experts.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/courses" class="btn-primary" style="font-size: 1rem; padding: 16px 36px;">Explore Courses</a>
+                    <a href="/ebooks" class="btn-outline" style="font-size: 1rem; padding: 16px 36px;">Browse eBooks</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+    <!-- ============================== -->
+    <!-- CATEGORY FILTER PILLS -->
+    <!-- ============================== -->
+    <section class="py-8 px-4 sm:px-6" style="background-color: #0a0a0a;">
+        <div class="flex flex-wrap justify-center gap-3">
+            {categories.map((cat, i) => (
+                <button
+                    class="px-5 py-2 rounded-full text-sm transition-all duration-200"
+                    style={`font-family: 'Inter', sans-serif; font-weight: 500; border: 1px solid rgba(255,255,255,0.15); background: ${i === 0 ? '#ffffff' : 'transparent'}; color: ${i === 0 ? '#0a0a0a' : '#a0a0a0'}; cursor: pointer;`}
+                >
+                    {cat}
+                </button>
+            ))}
+        </div>
+    </section>
 
-    <!-- Trust Badges Bar -->
-    <section class="scroll-reveal text-center" style="padding: 2rem 0 3rem;">
-        <p style="color: #6B6560; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">Trusted by educators worldwide</p>
-        <div class="flex flex-wrap justify-center gap-6 sm:gap-10">
-            <div class="trust-badge">
-                <span class="trust-badge-icon">&#127891;</span>
-                <span class="trust-badge-text">Featured at ISTE</span>
+    <!-- ============================== -->
+    <!-- POPULAR COURSES — Horizontal Scroll Carousel -->
+    <!-- ============================== -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">Popular Courses</h2>
+                <a href="/courses" class="text-sm" style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-weight: 500; text-decoration: none; transition: color 0.2s ease;">See all &rarr;</a>
             </div>
-            <div class="trust-badge">
-                <span class="trust-badge-icon">&#127979;</span>
-                <span class="trust-badge-text">Harvard Guest Lecturer</span>
-            </div>
-            <div class="trust-badge">
-                <span class="trust-badge-icon">&#127758;</span>
-                <span class="trust-badge-text">Used Worldwide</span>
-            </div>
-            <div class="trust-badge">
-                <span class="trust-badge-icon">&#128218;</span>
-                <span class="trust-badge-text">3 Published Books</span>
+            <div class="flex gap-5 overflow-x-auto scrollbar-hide pb-4" style="-webkit-overflow-scrolling: touch;">
+                {courses.map((course, i) => (
+                    <a href="/courses" class="min-w-[260px] sm:min-w-[280px] rounded-xl overflow-hidden group cursor-pointer transition-transform duration-200 hover:scale-[1.02]" style="text-decoration: none; flex-shrink: 0; background-color: #1a1a1a;">
+                        <div class="relative" style="aspect-ratio: 3/4;">
+                            <!-- Gradient placeholder for course image -->
+                            <div class="absolute inset-0" style={`background: ${courseGradients[i % courseGradients.length]};`}>
+                                <div class="absolute inset-0 flex items-center justify-center" style="opacity: 0.3;">
+                                    <svg class="w-16 h-16" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-5" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+                                <h3 style="color: #ffffff; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.3;">{course.title}</h3>
+                                <p style="color: #a0a0a0; font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 0.15rem;">With {course.instructor}</p>
+                                <p style="color: #6b6b6b; font-size: 0.75rem; font-family: 'Inter', sans-serif;">{course.duration}</p>
+                            </div>
+                        </div>
+                    </a>
+                ))}
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- How It Works — 3 plain-text points -->
-    <section class="scroll-reveal" style="padding: 2rem 0 4rem;">
-        <h2 class="text-center mb-16">How it works.</h2>
-        <div class="space-y-12 max-w-lg mx-auto">
-            <div>
-                <p style="color: #0D9488; font-weight: 500; font-size: 0.875rem; margin-bottom: 0.5rem;">01</p>
-                <h3 class="mb-2">AI handles the design work.</h3>
-                <p style="color: #6B6560;">What took weeks of project planning now takes hours. Standards alignment, differentiation, and materials — generated, not guessed.</p>
+    <!-- ============================== -->
+    <!-- FEATURED EBOOKS — Horizontal Scroll -->
+    <!-- ============================== -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 scroll-reveal" style="background-color: #0f0f0f;">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">Featured eBooks</h2>
+                <a href="/ebooks" class="text-sm" style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-weight: 500; text-decoration: none;">See all &rarr;</a>
             </div>
-            <div class="divider-line"></div>
-            <div>
-                <p style="color: #0D9488; font-weight: 500; font-size: 0.875rem; margin-bottom: 0.5rem;">02</p>
-                <h3 class="mb-2">You keep the pedagogy.</h3>
-                <p style="color: #6B6560;">Real projects, real collaboration, real audiences. AI removes friction from PBL — it doesn't replace what makes it work.</p>
-            </div>
-            <div class="divider-line"></div>
-            <div>
-                <p style="color: #0D9488; font-weight: 500; font-size: 0.875rem; margin-bottom: 0.5rem;">03</p>
-                <h3 class="mb-2">Tested in real classrooms.</h3>
-                <p style="color: #6B6560;">Every framework comes from working directly with students and schools. No theory-only content.</p>
+            <div class="flex gap-5 overflow-x-auto scrollbar-hide pb-4" style="-webkit-overflow-scrolling: touch;">
+                {books.map((book) => (
+                    <a href="/ebooks" class="min-w-[220px] sm:min-w-[240px] rounded-xl overflow-hidden group cursor-pointer transition-transform duration-200 hover:scale-[1.02]" style="text-decoration: none; flex-shrink: 0;">
+                        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio: 3/4;">
+                            <img
+                                src={book.image}
+                                alt={book.title}
+                                class="w-full h-full object-cover"
+                                loading="lazy"
+                            />
+                            <div class="absolute bottom-0 left-0 right-0 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+                                <h3 style="color: #ffffff; font-size: 0.95rem; font-weight: 700; line-height: 1.3;">{book.title}</h3>
+                                <p style="color: #a0a0a0; font-size: 0.8rem; font-family: 'Inter', sans-serif; margin-top: 0.25rem;">${book.price}</p>
+                            </div>
+                        </div>
+                    </a>
+                ))}
             </div>
         </div>
     </section>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
-
-    <!-- Featured Products -->
-    <section class="scroll-reveal" style="padding: 2rem 0 4rem;">
-        <h2 class="text-center mb-4">Start learning.</h2>
-        <p class="text-center mb-12" style="color: #6B6560;">Courses, books, and coaching for every stage of your PBL journey.</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <!-- Courses Card -->
-            <a href="/courses" class="product-feature-card" style="text-decoration: none;">
-                <div class="product-feature-icon" style="background-color: #0D9488; color: white;">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+    <!-- ============================== -->
+    <!-- MEET THE EXPERT — Cinematic Full Width -->
+    <!-- ============================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                <!-- Large portrait -->
+                <div class="w-full lg:w-5/12 flex-shrink-0">
+                    <div class="relative rounded-2xl overflow-hidden img-skeleton" style="aspect-ratio: 3/4;">
+                        <img
+                            src="/images/thom.webp"
+                            alt="Thom Markham, Ph.D."
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('loaded')"
+                        />
+                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 40%);"></div>
+                    </div>
                 </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Online Courses</h3>
-                <p style="color: #6B6560; font-size: 0.9rem;">Self-paced professional development with certificates. From $89.99.</p>
-                <span class="text-link-arrow mt-3 inline-block" style="font-size: 0.9rem;">View courses &rarr;</span>
+
+                <!-- Text content -->
+                <div class="w-full lg:w-7/12">
+                    <p style="color: #E33D5A; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; font-family: 'Inter', sans-serif; margin-bottom: 1rem;">Meet the Expert</p>
+                    <!-- Accent dash -->
+                    <div style="width: 40px; height: 3px; background-color: #E33D5A; border-radius: 2px; margin-bottom: 1.5rem;"></div>
+                    <h2 class="mb-4">Thom Markham, Ph.D.</h2>
+                    <p class="mb-5" style="color: #ffffff; font-style: italic; font-size: 1.15rem; line-height: 1.7; font-family: 'Playfair Display', serif;">
+                        "AI doesn't replace great teaching — it amplifies it. The future of PBL is here, and it's more human than ever."
+                    </p>
+                    <p class="mb-6" style="color: #a0a0a0; font-size: 1rem; line-height: 1.8;">
+                        Author of <em style="color: #ffffff;">Project-Based Learning Handbook</em>, <em style="color: #ffffff;">Design and Coaching Guide</em>, and <em style="color: #ffffff;">Redefining Smart</em>. Ph.D. in Psychology. Over 15 years training thousands of educators worldwide.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/ebooks" class="btn-primary" style="padding: 12px 28px; font-size: 0.9rem;">Browse His Books</a>
+                        <a href="/about" class="btn-outline" style="padding: 12px 28px; font-size: 0.9rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TRUST BADGES -->
+    <!-- ============================== -->
+    <section class="py-12 px-4 sm:px-6 scroll-reveal" style="background-color: #0f0f0f;">
+        <div class="max-w-4xl mx-auto text-center">
+            <p style="color: #6b6b6b; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; font-family: 'Inter', sans-serif; font-weight: 500;">Trusted by educators worldwide</p>
+            <div class="flex flex-wrap justify-center gap-8 sm:gap-12">
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#127891;</span>
+                    <span class="trust-badge-text">Featured at ISTE</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#127979;</span>
+                    <span class="trust-badge-text">Harvard Guest Lecturer</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#127758;</span>
+                    <span class="trust-badge-text">Used Worldwide</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="trust-badge-icon">&#128218;</span>
+                    <span class="trust-badge-text">3 Published Books</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- HOW IT WORKS — Dark Cards with Visual Steps -->
+    <!-- ============================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2>How It Works</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="rounded-2xl p-8 transition-all duration-200" style="background-color: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full mb-6" style="background-color: rgba(227, 61, 90, 0.1); border: 1px solid rgba(227, 61, 90, 0.2);">
+                        <span style="color: #E33D5A; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;">01</span>
+                    </div>
+                    <h3 class="mb-3" style="color: #ffffff; font-size: 1.15rem;">AI handles the design work.</h3>
+                    <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.7;">What took weeks of project planning now takes hours. Standards alignment, differentiation, and materials — generated, not guessed.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="rounded-2xl p-8 transition-all duration-200" style="background-color: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full mb-6" style="background-color: rgba(227, 61, 90, 0.1); border: 1px solid rgba(227, 61, 90, 0.2);">
+                        <span style="color: #E33D5A; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;">02</span>
+                    </div>
+                    <h3 class="mb-3" style="color: #ffffff; font-size: 1.15rem;">You keep the pedagogy.</h3>
+                    <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.7;">Real projects, real collaboration, real audiences. AI removes friction from PBL — it doesn't replace what makes it work.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="rounded-2xl p-8 transition-all duration-200" style="background-color: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-full mb-6" style="background-color: rgba(227, 61, 90, 0.1); border: 1px solid rgba(227, 61, 90, 0.2);">
+                        <span style="color: #E33D5A; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;">03</span>
+                    </div>
+                    <h3 class="mb-3" style="color: #ffffff; font-size: 1.15rem;">Tested in real classrooms.</h3>
+                    <p style="color: #a0a0a0; font-size: 0.95rem; line-height: 1.7;">Every framework comes from working directly with students and schools. No theory-only content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- START LEARNING — Three Product Pillars -->
+    <!-- ============================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 scroll-reveal" style="background-color: #0f0f0f;">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-4">
+                <h2>Start Learning</h2>
+            </div>
+            <p class="text-center mb-12" style="color: #a0a0a0; font-family: 'Inter', sans-serif; font-size: 1rem;">Courses, books, and coaching for every stage of your PBL journey.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <!-- Courses Card -->
+                <a href="/courses" class="product-feature-card" style="text-decoration: none;">
+                    <div class="product-feature-icon" style="background-color: #E33D5A; color: white;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #ffffff;">Online Courses</h3>
+                    <p style="color: #a0a0a0; font-size: 0.9rem; font-family: 'Inter', sans-serif;">Self-paced professional development with certificates. From $89.99.</p>
+                    <span class="text-link-arrow mt-4 inline-block" style="font-size: 0.9rem;">View courses &rarr;</span>
+                </a>
+
+                <!-- eBooks Card -->
+                <a href="/ebooks" class="product-feature-card" style="text-decoration: none;">
+                    <div class="product-feature-icon" style="background-color: #D97706; color: white;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8M9 2H15C15.5523 2 16 2.44772 16 3V5C16 5.55228 15.5523 6 15 6H9C8.44772 6 8 5.55228 8 5V3C8 2.44772 8.44772 2 9 2Z"/></svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #ffffff;">eBooks by Thom Markham</h3>
+                    <p style="color: #a0a0a0; font-size: 0.9rem; font-family: 'Inter', sans-serif;">Three bestselling PBL books. Practical frameworks you can use today. From $29.99.</p>
+                    <span class="text-link-arrow mt-4 inline-block" style="font-size: 0.9rem;">Browse eBooks &rarr;</span>
+                </a>
+
+                <!-- Coaching Card -->
+                <a href="/coaching" class="product-feature-card" style="text-decoration: none;">
+                    <div class="product-feature-icon" style="background-color: #7C3AED; color: white;">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #ffffff;">Live Coaching</h3>
+                    <p style="color: #a0a0a0; font-size: 0.9rem; font-family: 'Inter', sans-serif;">1:1 and group sessions with Thom and Phil. Personalized guidance for your school.</p>
+                    <span class="text-link-arrow mt-4 inline-block" style="font-size: 0.9rem;">Learn more &rarr;</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- TESTIMONIALS — Dark Card Carousel -->
+    <!-- ============================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 scroll-reveal">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center mb-12">What Educators Are Saying</h2>
+            <div class="flex gap-6 overflow-x-auto scrollbar-hide pb-4" style="-webkit-overflow-scrolling: touch;">
+                {testimonials.map((t) => (
+                    <div class="min-w-[320px] sm:min-w-[380px] rounded-2xl p-8 flex-shrink-0" style="background-color: #1a1a1a; border: 1px solid rgba(255,255,255,0.06);">
+                        <!-- Star rating -->
+                        <div class="mb-4 flex gap-1">
+                            {[1,2,3,4,5].map(() => (
+                                <svg class="w-4 h-4" fill="#E33D5A" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            ))}
+                        </div>
+                        <p style="color: #d1d5db; font-size: 1.05rem; font-style: italic; line-height: 1.7; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">"{t.quote}"</p>
+                        <p style="color: #ffffff; font-weight: 600; font-size: 0.9rem; font-family: 'Inter', sans-serif;">{t.name}</p>
+                        <p style="color: #6b6b6b; font-size: 0.8rem; font-family: 'Inter', sans-serif;">{t.role}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- EMAIL CAPTURE CTA -->
+    <!-- ============================== -->
+    <section id="free-guide" class="py-20 px-4 sm:px-6 lg:px-8 text-center scroll-reveal" style="background-color: #1a1a1a;">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="mb-4">Get the Free PBL + AI Starter Guide</h2>
+            <p class="mb-8" style="color: #a0a0a0; font-size: 1.05rem; font-family: 'Inter', sans-serif; line-height: 1.7;">
+                Practical frameworks, templates, and strategies — straight to your inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" class="input-pill flex-1" required />
+                <button type="submit" class="btn-primary">Get the Guide</button>
+            </form>
+            <p style="color: #6b6b6b; font-size: 0.75rem; margin-top: 1rem; font-family: 'Inter', sans-serif;">Join 5,000+ educators. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- STICKY BOTTOM CTA BAR (Desktop) -->
+    <!-- ============================== -->
+    <div id="sticky-cta" class="hidden sm:block fixed bottom-0 left-0 right-0 z-40 transition-all duration-300" style="background-color: rgba(26, 26, 26, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.08); transform: translateY(100%);">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+            <div>
+                <p style="color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; margin: 0;">Start learning from the best PBL experts today</p>
+                <p style="color: #6b6b6b; font-family: 'Inter', sans-serif; font-size: 0.8rem; margin: 0;">Courses from $89.99 &middot; Free starter guide available</p>
+            </div>
+            <a href="/courses" style="font-family: 'Inter', sans-serif; font-weight: 600; color: #ffffff; background-color: #E33D5A; padding: 10px 24px; border-radius: 9999px; text-decoration: none; font-size: 0.9rem; white-space: nowrap;">
+                Get Started
             </a>
-
-            <!-- eBooks Card -->
-            <a href="/ebooks" class="product-feature-card" style="text-decoration: none;">
-                <div class="product-feature-icon" style="background-color: #B45309; color: white;">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V20C20 20.5304 19.7893 21.0391 19.4142 21.4142C19.0391 21.7893 18.5304 22 18 22H6C5.46957 22 4.96086 21.7893 4.58579 21.4142C4.21071 21.0391 4 20.5304 4 20V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8M9 2H15C15.5523 2 16 2.44772 16 3V5C16 5.55228 15.5523 6 15 6H9C8.44772 6 8 5.55228 8 5V3C8 2.44772 8.44772 2 9 2Z"/></svg>
-                </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">eBooks by Thom Markham</h3>
-                <p style="color: #6B6560; font-size: 0.9rem;">Three bestselling PBL books. Practical frameworks you can use today. From $29.99.</p>
-                <span class="text-link-arrow mt-3 inline-block" style="font-size: 0.9rem;">Browse eBooks &rarr;</span>
-            </a>
-
-            <!-- Coaching Card -->
-            <a href="/coaching" class="product-feature-card" style="text-decoration: none;">
-                <div class="product-feature-icon" style="background-color: #7C3AED; color: white;">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                </div>
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Live Coaching</h3>
-                <p style="color: #6B6560; font-size: 0.9rem;">1:1 and group sessions with Thom and Phil. Personalized guidance for your school.</p>
-                <span class="text-link-arrow mt-3 inline-block" style="font-size: 0.9rem;">Learn more &rarr;</span>
-            </a>
         </div>
-    </section>
+    </div>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+    <script>
+        // Show sticky CTA after scrolling past the hero
+        (function() {
+            const stickyCta = document.getElementById('sticky-cta');
+            if (!stickyCta) return;
 
-    <!-- Testimonial -->
-    <section class="scroll-reveal text-center" style="padding: 2rem 0 4rem;">
-        <p style="color: #6B6560; font-size: 1.1rem; font-style: italic; max-width: 520px; margin: 0 auto 1.5rem;">"This framework completely changed how I approach project design. The AI tools saved me hours every week, and my students are more engaged than ever."</p>
-        <p style="color: #1A1A1A; font-weight: 500; font-size: 0.9rem;">— Middle school teacher, California</p>
-    </section>
+            let shown = false;
+            const threshold = window.innerHeight * 0.8;
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+            function checkScroll() {
+                if (window.scrollY > threshold && !shown) {
+                    stickyCta.style.transform = 'translateY(0)';
+                    shown = true;
+                } else if (window.scrollY <= threshold && shown) {
+                    stickyCta.style.transform = 'translateY(100%)';
+                    shown = false;
+                }
+            }
 
-    <!-- Email Capture -->
-    <section id="free-guide" class="scroll-reveal text-center" style="padding: 2rem 0 6rem;">
-        <h2 class="mb-4">Get the free PBL + AI starter guide.</h2>
-        <p class="mb-6" style="color: #6B6560; max-width: 420px; margin-left: auto; margin-right: auto;">Join educators worldwide. Get practical frameworks, templates, and strategies delivered to your inbox.</p>
-        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mt-8">
-            <input type="email" placeholder="Your email" class="input-pill flex-1" required />
-            <button type="submit" class="btn-primary-teal">Get the guide</button>
-        </form>
-    </section>
+            window.addEventListener('scroll', checkScroll, { passive: true });
+        })();
+    </script>
+
 </Layout>
